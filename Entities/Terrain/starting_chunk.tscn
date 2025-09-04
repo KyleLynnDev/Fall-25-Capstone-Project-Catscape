@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3xhvt6n5q0dr"]
+
+[ext_resource type="PackedScene" uid="uid://b6tbj0coid5m2" path="res://Entities/Terrain/StartingChunk.glb" id="1_gsp30"]
+
+[node name="StartingChunk" instance=ExtResource("1_gsp30")]

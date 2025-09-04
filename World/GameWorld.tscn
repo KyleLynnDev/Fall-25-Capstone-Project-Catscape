@@ -1,0 +1,289 @@
+[gd_scene load_steps=13 format=3 uid="uid://fyn38q8j8j55"]
+
+[ext_resource type="Script" uid="uid://dj5g3qjvvbdm0" path="res://World/main.gd" id="1_c7dk1"]
+[ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="1_rt6fa"]
+[ext_resource type="PackedScene" uid="uid://co6624j3g43tn" path="res://Entities/Items/interactable_object.tscn" id="2_uhmx5"]
+[ext_resource type="Texture2D" uid="uid://knellijvmgqm" path="res://PMCS_MarioSprite.png" id="4_3k2l0"]
+[ext_resource type="Texture2D" uid="uid://ykcyo7t3u601" path="res://abble.png" id="4_xw5dl"]
+[ext_resource type="Texture2D" uid="uid://b8hls7n6aufat" path="res://pickass.png" id="5_i71ww"]
+[ext_resource type="PackedScene" uid="uid://d27hf7qtwr2yr" path="res://World/level.tscn" id="7_xxkyy"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_rt6fa"]
+vertices = PackedVector3Array(-31.5, 0.5, -31.5, -31.5, 0.5, 31.5, 31.5, 0.5, 31.5, 31.5, 0.5, -31.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rt6fa"]
+albedo_color = Color(0.392157, 0.364706, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8cls8"]
+material = SubResource("StandardMaterial3D_rt6fa")
+size = Vector2(64, 64)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g7swe"]
+data = PackedVector3Array(32, 0, 32, -32, 0, 32, 32, 0, -32, -32, 0, 32, -32, 0, -32, 32, 0, -32)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_uhmx5"]
+vertices = PackedVector3Array(32, 0, 32, -32, 0, 32, 32, 0, -32, -32, 0, -32)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[node name="GameWorld" type="Node3D"]
+script = ExtResource("1_c7dk1")
+
+[node name="NewPlayer" parent="." instance=ExtResource("1_rt6fa")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." groups=["ground"]]
+navigation_mesh = SubResource("NavigationMesh_rt6fa")
+
+[node name="Terrain" type="StaticBody3D" parent="NavigationRegion3D" groups=["ground"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107393, 9.53674e-07, 0.0319047)
+mesh = SubResource("PlaneMesh_8cls8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Terrain"]
+shape = SubResource("ConcavePolygonShape3D_g7swe")
+
+[node name="Terrain2" type="StaticBody3D" parent="NavigationRegion3D" groups=["ground"]]
+transform = Transform3D(0.942793, -0.333379, 0, 0.333379, 0.942793, 0, 0, 0, 1, 27.0243, 0, 7.94959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Terrain2"]
+mesh = SubResource("PlaneMesh_8cls8")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="NavigationRegion3D/Terrain2/MeshInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_uhmx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Terrain2"]
+shape = SubResource("ConcavePolygonShape3D_g7swe")
+
+[node name="Object example" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0967, 0.74934, -0.915435)
+interact_name = "Example Object"
+display_name = "Example Object"
+
+[node name="Visual" parent="Object example" index="1"]
+texture = ExtResource("4_xw5dl")
+
+[node name="Item Example" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0967, 0.74934, -12.6175)
+interact_name = "Pickass"
+display_name = "Pickass"
+description = "it a pickass"
+effect = ""
+sprite_preview = ExtResource("5_i71ww")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example" index="1"]
+texture = ExtResource("4_xw5dl")
+
+[node name="Item Example4" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0967, 0.74934, -12.6175)
+interact_name = "Pickass"
+display_name = "Pickass"
+description = "it a pickass"
+effect = ""
+sprite_preview = ExtResource("5_i71ww")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example4" index="1"]
+texture = ExtResource("4_xw5dl")
+
+[node name="Item Example2" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2295, 0.74934, -6.46811)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("4_xw5dl")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example2" index="1"]
+texture = ExtResource("4_xw5dl")
+
+[node name="Item Example3" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8878, 0.74934, -21.8937)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("4_xw5dl")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example3" index="1"]
+texture = ExtResource("4_xw5dl")
+
+[node name="Skill Example" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0967, 0.74934, 13.3065)
+interact_name = "Example Skill"
+display_name = "Example Skill"
+interact_type = "Skill"
+
+[node name="NPC Example" parent="." instance=ExtResource("2_uhmx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57357, 2.23854, 13.3065)
+interact_name = "Example NPC"
+display_name = "Example NPC"
+sprite_preview = ExtResource("4_3k2l0")
+interact_type = "NPC"
+
+[node name="Visual" parent="NPC Example" index="1"]
+texture = ExtResource("4_3k2l0")
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 1.5)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 3, 1.15299, 24.9721)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.91259, 2.59356, 22.8681)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.91259, 3.97382, 29.1222)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2.91259, 3.97382, 34.3156)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -11.4249, 3.97382, 29.2671)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -14.8183, 7.85271, 6.42226)
+use_collision = true
+size = Vector3(1, 2.29492, 2.00879)
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -18.5828, 8.70896, 4.59716)
+use_collision = true
+size = Vector3(1, 2.29492, 2.00879)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -16.7068, 10.1393, 1.98605)
+use_collision = true
+size = Vector3(1, 2.29492, 2.00879)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.673542, 0.739149, 0, -0.739149, -0.673542, 0, 0, 0, 1, -23.1205, 0.929027, 29.2671)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.927073, 0.374882, 0, -0.374882, -0.927073, 0, 0, 0, 1, -23.1205, 0.929027, 19.8112)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.981212, 0.192933, 0, -0.192933, -0.981212, 0, 0, 0, 1, -23.1205, 0.929027, 14.6605)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.860066, 0.510183, 0, -0.510183, -0.860066, 0, 0, 0, 1, -23.1205, 0.929027, 24.5296)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.00935477, 0, 0.999956, 0, 1, 0, -0.999956, 0, 0.00935477, -0.88385, 2, -7.99336)
+use_collision = true
+size = Vector3(1, 5, 4)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.690567, 0, 0.723268, 0, 1, 0, -0.723268, 0, -0.690567, -10.8781, 5.84358, 0.56982)
+use_collision = true
+size = Vector3(1, 0.614746, 10.0366)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.713691, 0, 0.700461, 0, 1, 0, -0.700461, 0, 0.713691, -7.98336, 3.32813, -1.15243)
+use_collision = true
+size = Vector3(1, 7.65625, 4)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.713691, 0, 0.700461, 0, 1, 0, -0.700461, 0, 0.713691, -14.4093, 3.32812, 3.65798)
+use_collision = true
+size = Vector3(1, 7.65625, 4)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, -12.556, 2, -6.72047)
+use_collision = true
+size = Vector3(1, 5, 1.4541)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, -14.6356, 0.84082, -8.68051)
+use_collision = true
+size = Vector3(1, 2.68164, 1.4541)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, -14.6356, 1.35449, -5.38872)
+use_collision = true
+size = Vector3(1, 3.70898, 1.4541)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, -12.1215, 2.51373, -4.35541)
+use_collision = true
+size = Vector3(1, 6.02747, 1.4541)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.00935477, 0, 0.999956, 0, 1, 0, -0.999956, 0, 0.00935477, -0.887202, 1.26402, -11.2834)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.999956, 0, -0.00935481, 0, 1, 0, 0.00935481, 0, 0.999956, 0.977271, 1.26402, -13.1438)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, 1.01902, 1.26402, -18.7815)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.00935477, 0, 0.999956, 0, 1, 0, -0.999956, 0, 0.00935477, -0.841403, 1.26402, -20.646)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.00935468, 0, -0.999956, 0, 1, 0, 0.999956, 0, -0.00935468, -4.63572, 1.26402, -20.6853)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.999956, 0, 0.00935473, 0, 1, 0, -0.00935473, 0, -0.999956, -6.5002, 1.26402, -18.8249)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.00935471, -8.1066e-08, 0.999956, 0.707076, 0.707107, -0.00661479, -0.707076, 0.707107, 0.00661484, -3.54074, 1.26402, -22.5578)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(0.999956, 0, -0.00935464, 0, 1, 0, 0.00935464, 0, 0.999956, -6.54194, 1.26402, -13.1872)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Terrain"]
+transform = Transform3D(-0.00935468, 0, -0.999956, 0, 1, 0, 0.999956, 0, -0.00935468, -4.68152, 1.26402, -11.3227)
+use_collision = true
+size = Vector3(0.283325, 5, 4)
+
+[node name="Level" parent="." instance=ExtResource("7_xxkyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.6146, 0)
+
+[editable path="Object example"]
+[editable path="Item Example"]
+[editable path="Item Example4"]
+[editable path="Item Example2"]
+[editable path="Item Example3"]
+[editable path="Skill Example"]
+[editable path="NPC Example"]

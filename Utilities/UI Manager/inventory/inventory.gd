@@ -1,0 +1,48 @@
+extends Control
+
+@onready var grid_container: GridContainer = $ColorRect/GridContainer
+
+func _ready() -> void:
+	Global.inventory_updated.connect(_onInventoryUpdated)
+	_onInventoryUpdated()
+	
+	#get first child of grid container and
+	#grab focus of it 
+	var button = focusButton(grid_container)
+	if button:
+		print(button)
+		button.get_focus()	
+		
+		
+
+func _onInventoryUpdated():
+	clear_grid_container()
+	#add slots for each inventory position
+	for item in Global.inventory:
+		var slot = Global.inventorySlotScene.instantiate()
+		grid_container.add_child(slot)
+		if item != null:
+			slot.set_item(item)
+		else:
+			slot.set_empty()
+
+func clear_grid_container():
+	while grid_container.get_child_count() > 0:
+		var child = grid_container.get_child(0)
+		grid_container.remove_child(child)
+		child.queue_free()
+		
+		
+func focusButton(node: Node):
+	for c in node.get_children():
+		if c is Button:
+			return c
+		var nested = focusButton(c)
+		if nested:
+			return nested
+	return null
+		
+		
+			
+			
+			
