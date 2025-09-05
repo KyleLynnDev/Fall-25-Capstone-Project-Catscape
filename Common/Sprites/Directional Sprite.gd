@@ -1,5 +1,7 @@
 extends Sprite3D
 
+##ended up not using this script for sprites 
+
 @export var camera_path: NodePath
 #@export var hframes := 4 # number of frames per animation (e.g. walk has 4 frames)
 #@export var vframes := 4 # number of directions
