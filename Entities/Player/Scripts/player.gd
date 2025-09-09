@@ -443,6 +443,9 @@ func _on_shape_cast_body_exited(body) -> void:
 	print (closestCollidedObject)
 	
 	
+	##########################################################3
+	
+	
 	##apply item effect, TODO: in future to manage this turn into its own utlity script 
 func applyItemEffects(item):
 	match item["effect"]:
@@ -451,5 +454,8 @@ func applyItemEffects(item):
 			print("Speed increased to ", move_speed)
 		"_":
 			print("there is no effect")
+			
+func has_key():
+	return true
 	
 	
