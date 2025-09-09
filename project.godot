@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 UI="*res://Utilities/UI Manager/UIRoot.tscn"
 Global="*res://Utilities/Globals/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+QuestManager="*res://Utilities/Quest and Dialogue Managers/questManager.gd"
 
 [dialogic]
 
@@ -27,7 +28,8 @@ directories/dch_directory={
 "character": "res://Assets/Dialogue/character.dch"
 }
 directories/dtl_directory={
-"example1": "res://Assets/Dialogue/example1.dtl"
+"example1": "res://Assets/Dialogue/example1.dtl",
+"main_quest_not_started": "res://Entities/NPCs/Sir Frog/timelines/main_quest_not_started.dtl"
 }
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
@@ -55,6 +57,7 @@ translation/file_mode=1
 translation/translation_folder=""
 translation/save_mode=0
 translation/add_separator=false
+text/autopauses={}
 
 [editor_plugins]
 

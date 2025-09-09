@@ -28,13 +28,17 @@ func _ready():
 	if not Engine.is_editor_hint():
 		visualSprite.texture = sprite_preview
 		visualSprite.scale = Vector3(4.0,4.0,4.0)
-	
-		
+
+
+
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		visualSprite.texture = sprite_preview
 	#UI.closeAllInteractUIs()
 	#showInteractionUIElement()
+	
+
+
 func _physics_process(delta: float) -> void:
 
 	if Global.isPlayerInRange:
@@ -43,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		playerInRange = false 
 		
 	#showInteractionUIElement()
-	
+
 
 
 func interact():
@@ -53,6 +57,7 @@ func interact():
 	#logic for choosing which function to use: 
 	if (interact_type == "Object"): 
 		print("interaction type: Object")
+		observe()
 		
 	if (interact_type == "NPC"): 
 		print("interaction type: NPC")
@@ -60,11 +65,18 @@ func interact():
 		
 	if (interact_type == "Skill"): 
 		print("interaction type: Skill")
+		useSKill()
 		
 	if (interact_type == "Item"): 
 		print("interaction type: Item")
 		pickupItem() 
 		
+	if (interact_type == "Gate"):
+		print("interaction type: Gate")
+		useDoor()
+
+
+
 #function for using an item 
 func pickupItem():
 	var item = {
@@ -97,10 +109,29 @@ func showInteractionUIElement():
 			UI.showObjectObserve()
 		"_":
 			UI.closeAllInteractUIs()	
-		
-		
+
+
+
 func set_item_data(data):
 	interact_type = data["type"]
 	interact_name = data["name"]
 	effect = data["effect"]
 	sprite_preview = data["texture"]
+	
+	
+	
+func useSKill():
+	## [TODO] go to skill manager 
+	pass
+	
+	
+	
+func observe():
+	## [TODO] just print the item 
+	print(description)
+	
+	
+	
+func useDoor():
+	pass
+	
