@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Catscape Game"
-run/main_scene="uid://fyn38q8j8j55"
+run/main_scene="uid://6vh4qehvw0vd"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

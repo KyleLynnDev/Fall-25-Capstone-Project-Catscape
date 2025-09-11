@@ -34,6 +34,9 @@ func _ready():
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		visualSprite.texture = sprite_preview
+		
+	if interact_type == "Item":
+		pass
 	#UI.closeAllInteractUIs()
 	#showInteractionUIElement()
 	

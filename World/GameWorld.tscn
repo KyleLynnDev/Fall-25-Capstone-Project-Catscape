@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://fyn38q8j8j55"]
+[gd_scene load_steps=14 format=3 uid="uid://fyn38q8j8j55"]
 
 [ext_resource type="Script" uid="uid://dj5g3qjvvbdm0" path="res://World/main.gd" id="1_c7dk1"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="1_rt6fa"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ykcyo7t3u601" path="res://abble.png" id="4_xw5dl"]
 [ext_resource type="Texture2D" uid="uid://b8hls7n6aufat" path="res://pickass.png" id="5_i71ww"]
 [ext_resource type="PackedScene" uid="uid://d27hf7qtwr2yr" path="res://World/level.tscn" id="7_xxkyy"]
+[ext_resource type="PackedScene" uid="uid://wiy7cfldrylr" path="res://Common/Animations/scene_transition_rect.tscn" id="8_mv4pa"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rt6fa"]
 vertices = PackedVector3Array(-31.5, 0.5, -31.5, -31.5, 0.5, 31.5, 31.5, 0.5, 31.5, 31.5, 0.5, -31.5)
@@ -28,6 +29,9 @@ polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
 
 [node name="GameWorld" type="Node3D"]
 script = ExtResource("1_c7dk1")
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource("8_mv4pa")]
+mouse_filter = 2
 
 [node name="NewPlayer" parent="." instance=ExtResource("1_rt6fa")]
 

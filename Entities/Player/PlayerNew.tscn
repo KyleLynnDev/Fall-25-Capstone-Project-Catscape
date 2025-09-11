@@ -153,11 +153,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932849, 0)
 shape = SubResource("CylinderShape3D_oa2pn")
 debug_fill = false
 
-[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("actor")]
+[node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45375, 0)
 script = ExtResource("2_5iaw7")
-actor = NodePath("../Visual/BodyVisualCapsule")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
 unique_name_in_owner = true
@@ -181,6 +180,7 @@ script = ExtResource("4_oa2pn")
 
 [node name="BodyVisualCapsule" type="MeshInstance3D" parent="Visual"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_c6x2r")
 skeleton = NodePath("../..")
 
