@@ -16,6 +16,11 @@ signal inventory_updated
 var isPlayerInRange: bool = false;
 
 
+### Player Position in levels
+var wherePlayerShouldSpawn : Vector3; 
+
+
+
 func _ready() -> void:
 	inventory.resize(20)
 	print("Resizing inventory")
