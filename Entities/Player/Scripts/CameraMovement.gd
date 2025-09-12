@@ -31,8 +31,10 @@ func _unhandled_input(event):
 	#We can middle mouse click to move camera. it captures movement and then releases mouse 
 	 # 1) Detect middle‐mouse button press/release
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_MIDDLE:
+		print("middle click pressed")
 		if event.pressed:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return   # done—don’t fall through to motion logic this frame

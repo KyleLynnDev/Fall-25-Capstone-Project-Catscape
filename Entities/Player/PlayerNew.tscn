@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bvlpewbm31jxx" path="res://Entities/Player/player_sprites.gd" id="4_oa2pn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1c22a"]
+radius = 0.4
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oa2pn"]
 height = 3.25
@@ -137,7 +138,7 @@ animations = [{
 radius = 0.925126
 height = 2.93549
 
-[node name="Player_New" type="CharacterBody3D"]
+[node name="Player_New" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_c6x2r")
 
@@ -145,18 +146,19 @@ script = ExtResource("1_c6x2r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1c22a")
 
-[node name="ProximityCast" type="Area3D" parent="."]
+[node name="ProximityCast" type="Area3D" parent="." groups=["Proximity"]]
 collision_layer = 2
 
-[node name="ProximityCollisionShape" type="CollisionShape3D" parent="ProximityCast"]
+[node name="ProximityCollisionShape" type="CollisionShape3D" parent="ProximityCast" groups=["Proximity"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932849, 0)
 shape = SubResource("CylinderShape3D_oa2pn")
 debug_fill = false
 
-[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("actor")]
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("spring_arm", "actor")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45375, 0)
 script = ExtResource("2_5iaw7")
+spring_arm = NodePath("SpringArm3D")
 actor = NodePath("../Visual/BodyVisualCapsule")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
@@ -172,6 +174,7 @@ unique_name_in_owner = true
 
 [node name="PlayerSprites" type="AnimatedSprite3D" parent="Visual"]
 unique_name_in_owner = true
+process_priority = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.681137, 0)
 billboard = 2
 texture_filter = 0

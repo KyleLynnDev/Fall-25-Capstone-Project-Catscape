@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://jr7kklwa0fqj"]
+
+[ext_resource type="Script" uid="uid://05a6v2edigfj" path="res://Utilities/Utility Scripts and objects/door_trigger.gd" id="1_shtab"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvtu3"]
+
+[node name="DoorTrigger" type="Area3D"]
+script = ExtResource("1_shtab")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_cvtu3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
