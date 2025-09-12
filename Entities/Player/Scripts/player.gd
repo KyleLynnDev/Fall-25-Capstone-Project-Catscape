@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 @export_group("Movement variables")
 
-@export var move_speed: float = 12.0; ## max run speed on ground
+@export var move_speed: float = 6.0; ## max run speed on ground
 @export var acceleration: float = 20.0; ## ground movement accel 
 @export var jump_impulse: float = 12.0; ## when you press the hmp button, vertical velocity is set to this
 @export var rotation_speed: float = 12.0; ## player model rotation speed - how fast model orients to movement or camera direction
@@ -233,9 +233,9 @@ func 	handleButtonInteractionInput(event):
 	# Run trigger 
 	if Input.is_action_pressed("engageSprint"):
 		if(is_on_floor()):
-			move_speed = 24.0
+			move_speed = 12.0
 	else: 
-		move_speed = 12.0
+		move_speed = 6.0
 	
 	if Input.is_action_just_pressed("toggleFullscreen"):
 		#TODO: add fullscreen

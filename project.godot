@@ -80,6 +80,7 @@ folder_colors={
 Interactable=""
 ground=""
 Player=""
+Proximity=""
 
 [input]
 

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bvlpewbm31jxx" path="res://Entities/Player/player_sprites.gd" id="4_oa2pn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1c22a"]
+radius = 0.4
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oa2pn"]
 height = 3.25
@@ -145,10 +146,10 @@ script = ExtResource("1_c6x2r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1c22a")
 
-[node name="ProximityCast" type="Area3D" parent="."]
+[node name="ProximityCast" type="Area3D" parent="." groups=["Proximity"]]
 collision_layer = 2
 
-[node name="ProximityCollisionShape" type="CollisionShape3D" parent="ProximityCast"]
+[node name="ProximityCollisionShape" type="CollisionShape3D" parent="ProximityCast" groups=["Proximity"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932849, 0)
 shape = SubResource("CylinderShape3D_oa2pn")
 debug_fill = false
