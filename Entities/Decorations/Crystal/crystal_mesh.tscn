@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqksudore6gkp"]
+
+[ext_resource type="PackedScene" uid="uid://chrkjvxphpurc" path="res://Entities/Decorations/Crystal/crystal.gltf" id="3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbaqy"]
+albedo_color = Color(0.466667, 0.192157, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yqhj"]
+albedo_color = Color(0.415686, 0.4, 0.568627, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxksx"]
+albedo_color = Color(0.498039, 0.294118, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55wfq"]
+albedo_color = Color(0.713726, 0.513726, 0.8, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhr1a"]
+albedo_color = Color(0.898039, 0.462745, 0.713726, 1)
+
+[node name="crystal" instance=ExtResource("3")]
+
+[node name="Ground" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mbaqy")
+
+[node name="Spire_1" parent="Ground" index="0"]
+transform = Transform3D(0.931917, 0.523792, 0, -0.256603, 1.90228, 0, 0, 0, 0.9666, 0.00442126, -0.00977677, 0.0215179)
+surface_material_override/0 = SubResource("StandardMaterial3D_8yqhj")
+
+[node name="Spire_2" parent="Ground" index="1"]
+transform = Transform3D(-0.223364, -0.132712, 0.884556, -0.242743, 1.90228, -1.36255e-08, -0.852817, -0.5067, -0.231677, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jxksx")
+
+[node name="Spire_3" parent="Ground" index="2"]
+transform = Transform3D(-0.689533, -0.463782, -0.375407, -0.214429, 1.90228, 3.00904e-09, 0.361937, 0.24344, -0.715194, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_55wfq")
+
+[node name="Spire_4" parent="Ground" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nhr1a")
