@@ -3,7 +3,10 @@ extends CharacterBody3D
 
 @export_group("Movement variables")
 
-@export var move_speed: float = 6.0; ## max run speed on ground
+@export var walk_speed: float = 4.0;
+@export var sprint_speed: float = 7.0;
+
+@export var move_speed: float = walk_speed; ## max run speed on ground
 @export var acceleration: float = 20.0; ## ground movement accel 
 @export var jump_impulse: float = 12.0; ## when you press the hmp button, vertical velocity is set to this
 @export var rotation_speed: float = 12.0; ## player model rotation speed - how fast model orients to movement or camera direction
@@ -80,6 +83,9 @@ const SIDE_NEAR := 0.05  # treat as perfectly front/back if |side| < this
 var closestCollidedObject = null;
 var interactCooldown = 0.1;
 
+## some more ui stuff
+var UICooldown = 0.2; 
+
 ##
 
 
@@ -87,6 +93,7 @@ var interactCooldown = 0.1;
 
 
 func _ready() -> void:
+	var UICooldown = 0.2; 
 	Global.setPlayerReference(self)
 	Global.isPlayerInRange = false
 	self.position = Global.wherePlayerShouldSpawn
@@ -105,10 +112,12 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	interactCooldown -= delta
+	UICooldown -= delta
+	
 	if(Global.canMove == false):
 		return
-	
-	interactCooldown -= delta
+
 
 	
 	if not is_on_floor(): #apply gravity
@@ -203,21 +212,38 @@ func moveToPoint(delta, speed ):
 func 	handleButtonInteractionInput(event):
 
 
+	if Input.is_action_just_pressed("moveUIRight") and !UI.canZoom and UICooldown <= 0:
+		print("Right bumper pressed")
+		UICooldown = 0.1
+		UI.switchRight()
+		
+	if Input.is_action_just_pressed("moveUILeft") and !UI.canZoom and UICooldown <= 0:
+		print("Left bumper pressed")
+		UICooldown = 0.1
+		UI.switchLeft()
+		
+		
+
+
 	#Menu item input - D Pad / pause 
-	if Input.is_action_just_pressed("openInventory"):
+	if Input.is_action_just_pressed("openInventory") and UICooldown <= 0:
 		print("opening inventory")
+		UICooldown = 0.1
 		UI.toggle_inventory()
 		
-	if Input.is_action_just_pressed("openMap"):
+	if Input.is_action_just_pressed("openMap") and UICooldown <= 0:
 		print("opening map")
+		UICooldown = 0.1
 		UI.toggle_map()
 		
-	if Input.is_action_just_pressed("openQuests"):
+	if Input.is_action_just_pressed("openQuests") and UICooldown <= 0:
 		print("opening quest log")
+		UICooldown = 0.1
 		UI.toggle_quest()
 		
-	if Input.is_action_just_pressed("pauseGame"):
+	if Input.is_action_just_pressed("pauseGame") and UICooldown <= 0:
 		print("opening pause menu")
+		UICooldown = 0.1
 		UI.toggle_pause()
 	
 		
@@ -233,9 +259,9 @@ func 	handleButtonInteractionInput(event):
 	# Run trigger 
 	if Input.is_action_pressed("engageSprint"):
 		if(is_on_floor()):
-			move_speed = 12.0
+			move_speed = sprint_speed
 	else: 
-		move_speed = 6.0
+		move_speed = walk_speed
 	
 	if Input.is_action_just_pressed("toggleFullscreen"):
 		#TODO: add fullscreen

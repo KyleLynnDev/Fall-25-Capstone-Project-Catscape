@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid_container: GridContainer = $ColorRect/GridContainer
+@onready var grid_container: GridContainer = $"Inventory backdrop"/GridContainer
 
 func _ready() -> void:
 	Global.inventory_updated.connect(_onInventoryUpdated)
@@ -11,7 +11,7 @@ func _ready() -> void:
 	var button = focusButton(grid_container)
 	if button:
 		print(button)
-		button.get_focus()	
+		button.grab_focus()	
 		
 		
 

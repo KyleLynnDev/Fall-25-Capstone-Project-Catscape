@@ -95,7 +95,7 @@ func interact():
 
 
 
-#function for using an item 
+## picks up an item from the ground and adds to inventory 
 func pickupItem():
 	var item = {
 		"quantity" : 1,
@@ -113,7 +113,9 @@ func pickupItem():
 	
 
 
-	
+
+## Choose which item from the context menu should be shown when interactable
+## is in range of player 	
 func showInteractionUIElement():
 	print("[", name, "] type=", interact_type, " calling UI")
 	match interact_type:
@@ -138,6 +140,8 @@ func set_item_data(data):
 	
 	
 	
+## This will be highly context sensitive based on the type of skill object
+## the player uses. Examples include fishing spot, tree to cut, rock to mine, etc. 	
 func useSKill():
 	## [TODO] go to skill manager 
 	pass
@@ -147,9 +151,13 @@ func useSKill():
 func observe():
 	## [TODO] just print the item 
 	print(description)
+	if(!Global.IsCurrentlyInDialogue):
+		Global.say_quick(description)
 	
 	
-	
+## [TODO] - this should link to the door object and fire off its animation 
+## opening door if closed, unlocking if locked and then using, or telling
+## the player they need something in order to progress such as HEART points
 func useDoor():
 	pass
 	
@@ -162,3 +170,6 @@ static func get_animated_transform(
 	var y_pos := sin(p_time * TRANSLATION_SPEED) * TRANSLATION_DISTANCE * translation_direction
 	var offset_transform := Transform3D(Basis.from_euler(rotation), Vector3.UP * y_pos)
 	return p_default_transform * offset_transform
+	
+	
+	

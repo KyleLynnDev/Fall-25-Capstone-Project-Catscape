@@ -40,11 +40,36 @@ offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
 
-[node name="Quit to Title Screen" type="Button" parent="VBoxContainer"]
+[node name="Resume" type="Button" parent="BoxContainer"]
 layout_mode = 2
+text = "Resume Game"
+
+[node name="Fullscreen" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Toggle Fullscreen"
+
+[node name="Settings" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit to Title Main Menu" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Exit to Main Menu"
+
+[node name="Quit to Title Screen" type="Button" parent="BoxContainer"]
+layout_mode = 2
+text = "Exit to Title Screen"

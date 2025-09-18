@@ -6,27 +6,64 @@ class_name UIManager
 
 enum Screen { NONE, MAP, INVENTORY, PAUSE, QUEST}
 
+
+# references to various menu roots 
 @onready var pause: Control = %Pause
 @onready var inventory: Control = %Inventory
 @onready var map: Control = %Map
 @onready var quest_log: Control = %QuestLog
 @onready var interact_ui: Control = %InteractUI
 
-@onready var item_pickup: ColorRect = %InteractUI/ItemPickup
-@onready var skill_use: ColorRect = %InteractUI/SkillUse
-@onready var npc_talk: ColorRect = %InteractUI/NPCTalk
-@onready var object_observe: ColorRect = %InteractUI/ObjectObserve
 
+# interaction popup references 
+@onready var item_pickup: ColorRect = %InteractUI/%ItemPickup
+@onready var skill_use: ColorRect = %InteractUI/%SkillInteract
+@onready var npc_talk: ColorRect = %InteractUI/%NPCTALK
+@onready var object_observe: ColorRect = %InteractUI/%ObjectObserve
+@onready var door_use: ColorRect = %InteractUI/%DoorUse
+
+
+var canZoom = true; 
 
 
 var current : int = Screen.NONE;
+
+
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	#print(map, inventory, pause, quest_log)
 	print(item_pickup, skill_use, npc_talk, object_observe)
 
-	
+#enum Screen { NONE, MAP, INVENTORY, PAUSE, QUEST}
+#				0	 1     2         3      4 
+
+func switchRight() -> void:
+
+	match (current):
+		1: #map
+			print ("switching to INVENTORY")
+			toggle(2)
+		2: # inventory
+			print ("switching to QUEST")
+			toggle(4)
+		4: #quest
+			print ("switching to MAP")
+			toggle(1)
+			
+func switchLeft() -> void:
+	match (current):
+		1: #map
+			print ("switching to QUEST")
+			toggle(4)
+		2: #inv
+			print ("switching to MAP")
+			toggle(1)
+		4: # quest
+			print ("switching to INVENTORY")
+			toggle(2)
+
 	
 func _hide_all():
 	for s in [map, inventory, pause, quest_log]:
@@ -40,10 +77,12 @@ func toggle(screen : int) -> void:
 	if (current == screen):
 		_hide_all()
 		Global.canMove = true; 
+		canZoom = true;
 		print("closing", current)
 	else:
 		print ("showing", screen)
 		Global.canMove = false; 
+		canZoom = false;
 		_show_only(screen)
 	
 	
