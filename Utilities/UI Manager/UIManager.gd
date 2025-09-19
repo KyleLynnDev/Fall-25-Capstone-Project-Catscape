@@ -145,10 +145,15 @@ func showSkillDo():
 	print(" skill should be visible")
 	skill_use.visible = true
 	
+func showDoorUse():
+	print(" Door should be visible")
+	door_use.visible = true
+	
 func closeAllInteractUIs():
 	item_pickup.hide()
 	skill_use.hide()
 	npc_talk.hide()
 	object_observe.hide()
+	door_use.hide()
 	
 	

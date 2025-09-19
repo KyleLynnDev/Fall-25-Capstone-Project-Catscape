@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrcfg55dt0iu"
-path.s3tc="res://.godot/imported/Half Door Texture.png-a46199ea13299effb0509a2599eda72b.s3tc.ctex"
+uid="uid://8d8pqrhi0m1f"
+path.s3tc="res://.godot/imported/yellow dust particle.png-d4675c1e76a011614fdc1c82af96fe44.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Shaders/Half Door Texture.png"
-dest_files=["res://.godot/imported/Half Door Texture.png-a46199ea13299effb0509a2599eda72b.s3tc.ctex"]
+source_file="res://Assets/Shaders Materials Textures/yellow dust particle.png"
+dest_files=["res://.godot/imported/yellow dust particle.png-d4675c1e76a011614fdc1c82af96fe44.s3tc.ctex"]
 
 [params]
 

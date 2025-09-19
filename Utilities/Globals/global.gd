@@ -6,21 +6,31 @@ var playerNode: Node = null
 @onready var inventorySlotScene = preload("res://Utilities/UI Manager/inventory/inventorySlot.tscn")
 var canMove : bool = true 
 
-#inventory items
+## PLAYER STATS AND COLLECTABLES
+var HEART : int = 0;
+var HEARTEXP : int = 0;
+
+var coin : int = 25;
+var keys : int = 1; 
+
+##
+
+
+##inventory items
 var inventory = []
 
-#signals
+##signals
 signal inventory_updated
 
-#var
+##var
 var isPlayerInRange: bool = false;
 var IsCurrentlyInDialogue : bool = false; 
 
 
 ### Player Position in levels
-var wherePlayerShouldSpawn : Vector3; 
+var wherePlayerShouldSpawn : Vector3 = Vector3(0,0,0); 
 
-
+var checkpointPosition : Vector3;
 
 func _ready() -> void:
 	inventory.resize(20)
@@ -31,7 +41,20 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_dialog_end)
 
 
+func updateHEART():
+	#TODO: set HEART level to be a function of HEARTEXP
+	pass
 
+
+
+## used new checkpoint location 
+func setCheckpoint(pos :Vector3) -> void:
+	print("pos is ", pos)
+	print("checkpoint position is ", checkpointPosition)
+	checkpointPosition = pos;
+	
+	print("checkpoint position is ", checkpointPosition)
+	
 
 ## These next two functions update if you are in dialogue and if you can move
 func _on_dialog_start() -> void:

@@ -2,29 +2,50 @@ extends StaticBody3D
 
 @export var requirement_type : String = "key"
 @export var requirement_value : String = ""
+@onready var sprite_3d: Sprite3D = $Sprite3D
+
+@export var interact_type : String = "Gate"
 
 var player = Global.playerNode; 
+@onready var anim: AnimationPlayer = $Sprite3D/AnimationPlayer
 
+func _ready():
+	pass
 
 func interact():
 	match requirement_type:
 		"key":
-			if player.has_key(requirement_value):
-				open_gate()
+			if Global.keys >= 1:
+				openGate()
 			else:
-				deny_gate()
+				denyGate()
 		"heart":
 			if player.heart_level >= int(requirement_value):
-				open_gate()
+				openHeartGate()
 			else:
-				deny_gate()
+				denyHeartGate()
 
 
-func open_gate():
-	# [TODO] - fire off open animation for door  
-	pass
+func openGate():
+ 
+	Global.keys -= 1;
+	Global.say_quick("You use a key and open the door and it opens!")
+	#anim.play("DOOROPENING")
+	self.queue_free()
 	
 	
-func deny_gate():
-	# [TODO] - open text box that tells player they need to meet a certain threshhold 
-	pass				
+func denyGate():
+
+	Global.say_quick("You need a key to open this door!")			
+	
+	
+func openHeartGate(): 
+	Global.keys -= 1;
+	Global.say_quick("You are gentle of heart and the gate opens")
+	
+	
+func denyHeartGate():
+	Global.say_quick("Try cultivating heart to open this gate")			
+	
+func showInteractionUIElement():
+	UI.showDoorUse()

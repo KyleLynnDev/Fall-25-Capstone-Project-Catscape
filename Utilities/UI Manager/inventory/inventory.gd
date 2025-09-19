@@ -2,6 +2,12 @@ extends Control
 
 @onready var grid_container: GridContainer = $"Inventory backdrop"/GridContainer
 
+@onready var heart_label: Label = $HeartPickup/HEARTLabel
+@onready var coin_label: Label = $Coins/CoinLabel
+@onready var key_label: Label = $NormalKey/KeyLabel
+
+
+
 func _ready() -> void:
 	Global.inventory_updated.connect(_onInventoryUpdated)
 	_onInventoryUpdated()
@@ -13,6 +19,14 @@ func _ready() -> void:
 		print(button)
 		button.grab_focus()	
 		
+		
+func _process(delta: float) -> void:
+	if(!self.visible):
+		return
+	heart_label.text = str(Global.HEART)
+	coin_label.text = str(Global.coin)
+	key_label.text = str(Global.keys)
+	
 		
 
 func _onInventoryUpdated():

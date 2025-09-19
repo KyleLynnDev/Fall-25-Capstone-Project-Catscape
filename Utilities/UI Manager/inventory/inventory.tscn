@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://duyc66grxg4ii"]
+[gd_scene load_steps=7 format=3 uid="uid://duyc66grxg4ii"]
 
 [ext_resource type="Script" uid="uid://dyr6uoke1y6dw" path="res://Utilities/UI Manager/inventory/inventory.gd" id="1_8w6iv"]
 [ext_resource type="PackedScene" uid="uid://h1pxs6441q6v" path="res://Utilities/UI Manager/inventory/inventorySlot.tscn" id="2_2ux2p"]
 [ext_resource type="Texture2D" uid="uid://cy54mf7t82db1" path="res://Utilities/UI Manager/inventory/inventory backdrop.png" id="2_61s8h"]
+[ext_resource type="Texture2D" uid="uid://blkmiytcuer32" path="res://Entities/Items/Equipment/coins.png" id="4_xb7wd"]
+[ext_resource type="Texture2D" uid="uid://dphq8ygd0garr" path="res://Entities/Items/Equipment/Normal Key.png" id="5_b62m1"]
+[ext_resource type="Texture2D" uid="uid://c7sl76f4ukree" path="res://HEART pickup.png" id="6_xb7wd"]
 
 [node name="Inventory" type="Control"]
 process_mode = 3
@@ -17,14 +20,72 @@ mouse_filter = 1
 script = ExtResource("1_8w6iv")
 
 [node name="Inv Backdrop" type="TextureRect" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 2
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
 layout_mode = 1
 anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+localize_numeral_system = true
+tooltip_text = ""
+tooltip_auto_translate_mode = 0
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
 mouse_filter = 2
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
 texture = ExtResource("2_61s8h")
+expand_mode = 0
+stretch_mode = 0
+flip_h = false
+flip_v = false
+script = null
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -40,6 +101,54 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "inventory"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43125
+anchor_top = 0.443056
+anchor_right = 0.485938
+anchor_bottom = 0.443056
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HEART"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.432813
+anchor_top = 0.618056
+anchor_right = 0.4875
+anchor_bottom = 0.618056
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "KEYS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43125
+anchor_top = 0.765278
+anchor_right = 0.485938
+anchor_bottom = 0.765278
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "COINS"
 metadata/_edit_use_anchors_ = true
 
 [node name="Inventory backdrop" type="ColorRect" parent="."]
@@ -128,3 +237,36 @@ layout_mode = 2
 
 [node name="InventorySlot20" parent="Inventory backdrop/GridContainer" instance=ExtResource("2_2ux2p")]
 layout_mode = 2
+
+[node name="Coins" type="Sprite2D" parent="."]
+position = Vector2(269, 298)
+texture = ExtResource("4_xb7wd")
+
+[node name="CoinLabel" type="Label" parent="Coins"]
+offset_left = 18.0
+offset_top = -7.0
+offset_right = 58.0
+offset_bottom = 16.0
+text = "0"
+
+[node name="NormalKey" type="Sprite2D" parent="."]
+position = Vector2(268, 249)
+texture = ExtResource("5_b62m1")
+
+[node name="KeyLabel" type="Label" parent="NormalKey"]
+offset_left = 20.0
+offset_top = -8.0
+offset_right = 60.0
+offset_bottom = 15.0
+text = "0"
+
+[node name="HeartPickup" type="Sprite2D" parent="."]
+position = Vector2(267, 192)
+texture = ExtResource("6_xb7wd")
+
+[node name="HEARTLabel" type="Label" parent="HeartPickup"]
+offset_left = 19.0
+offset_top = -10.0
+offset_right = 59.0
+offset_bottom = 13.0
+text = "0"
