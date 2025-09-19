@@ -2,10 +2,10 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bvlaos8wd7yxb" path="res://Assets/Mesh Libraries/old demo tiles.tres" id="1_6nady"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="2_yq7rb"]
-[ext_resource type="ArrayMesh" uid="uid://j8l1qyr2xglr" path="res://Assets/Shaders/light-shaft_Mesh.mesh" id="3_522g3"]
+[ext_resource type="ArrayMesh" uid="uid://j8l1qyr2xglr" path="res://Assets/Shaders Materials Textures/light-shaft_Mesh.mesh" id="3_522g3"]
 [ext_resource type="PackedScene" uid="uid://bqksudore6gkp" path="res://Entities/Decorations/Crystal/crystal_mesh.tscn" id="4_bo14w"]
-[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders/skybox.gdshader" id="4_r4tvm"]
-[ext_resource type="Texture2D" uid="uid://bfmoijieywk53" path="res://Assets/Shaders/cave background.png" id="4_rhlxn"]
+[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="4_r4tvm"]
+[ext_resource type="Texture2D" uid="uid://bfmoijieywk53" path="res://Assets/Shaders Materials Textures/cave background.png" id="4_rhlxn"]
 [ext_resource type="PackedScene" uid="uid://csuuravr2ftop" path="res://Assets/Models/huge_stone.blend" id="5_2bfyl"]
 [ext_resource type="PackedScene" uid="uid://jr7kklwa0fqj" path="res://Utilities/Utility Scripts and objects/door_trigger.tscn" id="6_0j5o7"]
 [ext_resource type="PackedScene" uid="uid://co6624j3g43tn" path="res://Entities/Items/interactable_object.tscn" id="6_qetlp"]

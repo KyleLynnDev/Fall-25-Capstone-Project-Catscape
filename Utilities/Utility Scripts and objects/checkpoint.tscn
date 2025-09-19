@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0fpy62s5mnj"]
+
+[ext_resource type="Script" uid="uid://cdrtbmlv0p4et" path="res://Utilities/Utility Scripts and objects/checkpoint.gd" id="1_khs6s"]
+[ext_resource type="Script" uid="uid://d6jwgh7xar10" path="res://Common/Animations/sinusoidal_animation_parent.gd" id="2_dmwgl"]
+[ext_resource type="Texture2D" uid="uid://5kk3ekxaks8i" path="res://Unknown Object Image.png" id="3_sksnt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iaqtr"]
+
+[node name="Checkpoint" type="Area3D"]
+script = ExtResource("1_khs6s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.643587, 0)
+shape = SubResource("CylinderShape3D_iaqtr")
+
+[node name="visual" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.719475, 0)
+script = ExtResource("2_dmwgl")
+
+[node name="Sprite3D" type="Sprite3D" parent="visual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.675073, 0)
+billboard = 2
+texture = ExtResource("3_sksnt")
