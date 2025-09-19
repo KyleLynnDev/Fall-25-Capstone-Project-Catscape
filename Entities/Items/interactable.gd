@@ -77,8 +77,9 @@ func interact():
 		print("interaction type: Object")
 		observe()
 		
-	if (interact_type == "NPC"): 
+	if (interact_type == "NPC" && !Global.IsCurrentlyInDialogue): 
 		print("interaction type: NPC")
+		##TODO: replace this with a more customizable system based on context
 		Dialogic.start("example1")
 		
 	if (interact_type == "Skill"): 
@@ -124,7 +125,8 @@ func showInteractionUIElement():
 		"Skill":
 			UI.showSkillDo()
 		"NPC":
-			UI.showNPCSpeak()
+			if(!Global.IsCurrentlyInDialogue):
+				UI.showNPCSpeak()
 		"Object":
 			UI.showObjectObserve()
 		"_":

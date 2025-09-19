@@ -58,6 +58,7 @@ func setCheckpoint(pos :Vector3) -> void:
 
 ## These next two functions update if you are in dialogue and if you can move
 func _on_dialog_start() -> void:
+	UI.closeAllInteractUIs()
 	IsCurrentlyInDialogue = true;
 	canMove = false
 

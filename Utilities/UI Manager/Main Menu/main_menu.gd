@@ -19,7 +19,7 @@ func _process(delta):
 
 func _on_start_game_pressed():
 	print("Starting Game")
-	transition.transitionTo("res://World/GameWorld.tscn")
+	transition.transitionTo("res://World/Test Tut Level.tscn")
 	#get_tree().change_scene_to_file("res://World/GameWorld.tscn") ## old way of transitioning screen
 
 
