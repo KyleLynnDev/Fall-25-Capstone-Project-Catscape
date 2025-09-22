@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqml82cu36kgf"]
+
+[ext_resource type="PackedScene" uid="uid://1nrut80ia4n8" path="res://Utilities/Utility Scripts and objects/one_time_trigger.tscn" id="1_dnhv8"]
+[ext_resource type="Script" uid="uid://cixbemg6uq671" path="res://Entities/Items/Consumables/Key.gd" id="2_avogc"]
+[ext_resource type="Script" uid="uid://d6jwgh7xar10" path="res://Common/Animations/sinusoidal_animation_parent.gd" id="3_p2fhf"]
+[ext_resource type="Texture2D" uid="uid://dphq8ygd0garr" path="res://Entities/Items/Equipment/Normal Key.png" id="4_w64pt"]
+
+[node name="One Time Trigger" instance=ExtResource("1_dnhv8")]
+script = ExtResource("2_avogc")
+
+[node name="visual" type="Node3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215912, 0)
+script = ExtResource("3_p2fhf")
+
+[node name="Sprite3D" type="Sprite3D" parent="visual" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396259, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_w64pt")

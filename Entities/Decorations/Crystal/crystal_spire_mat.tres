@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ccv7hphoqwye8"]
 
-[ext_resource type="Shader" uid="uid://ciy77uqy06sc2" path="res://Assets/Shaders/n64_lit_metal.gdshader" id="1_uef18"]
+[ext_resource type="Shader" uid="uid://ciy77uqy06sc2" path="res://Assets/Shaders Materials Textures/n64_lit_metal.gdshader" id="1_uef18"]
 
 [resource]
 render_priority = 0

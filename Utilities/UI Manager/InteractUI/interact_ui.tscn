@@ -18,7 +18,7 @@ size_flags_vertical = 4
 [node name="ItemPickup" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(160, 50)
+custom_minimum_size = Vector2(120, 25)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,104 +26,33 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = -25.0
-offset_right = 80.0
-offset_bottom = 25.0
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
+color = Color(0.705882, 0.54902, 0.317647, 1)
 
 [node name="Label" type="Label" parent="ItemPickup"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -8.5
-offset_right = 56.0
-offset_bottom = 14.5
+offset_top = -4.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_dme4n")
+theme_override_font_sizes/font_size = 16
 text = "PICK UP"
-
-[node name="SkillUse" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(160, 50)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -25.0
-offset_right = 80.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
-
-[node name="Label" type="Label" parent="SkillUse"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -9.5
-offset_right = 31.5
-offset_bottom = 13.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dme4n")
-text = "USE"
-
-[node name="NPCTalk" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(160, 50)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -25.0
-offset_right = 80.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
-
-[node name="Label" type="Label" parent="NPCTalk"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.5
-offset_top = -9.5
-offset_right = 35.5
-offset_bottom = 13.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_dme4n")
-text = "TALK"
+horizontal_alignment = 1
 
 [node name="ObjectObserve" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(160, 50)
+custom_minimum_size = Vector2(120, 25)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -131,26 +60,127 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = -25.0
-offset_right = 80.0
-offset_bottom = 25.0
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -129.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.192157, 0.376471, 0.321569, 1)
+color = Color(0.705882, 0.54902, 0.317647, 1)
 
 [node name="Label" type="Label" parent="ObjectObserve"]
 texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -7.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dme4n")
+theme_override_font_sizes/font_size = 16
+text = "Observe
+"
+horizontal_alignment = 1
+
+[node name="NPCTALK" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(80, 25)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.705882, 0.54902, 0.317647, 1)
+
+[node name="Label" type="Label" parent="NPCTALK"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dme4n")
+theme_override_font_sizes/font_size = 16
+text = "Talk"
+horizontal_alignment = 1
+
+[node name="SkillInteract" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(135, 25)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = -8.5
-offset_right = 56.0
-offset_bottom = 14.5
+offset_left = -80.0
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.705882, 0.54902, 0.317647, 1)
+
+[node name="Label" type="Label" parent="SkillInteract"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_dme4n")
-text = "Observe"
+theme_override_font_sizes/font_size = 16
+text = "Interact"
+horizontal_alignment = 1
+
+[node name="DoorUse" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -154.0
+offset_right = 40.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.705882, 0.54902, 0.317647, 1)
+
+[node name="Label" type="Label" parent="DoorUse"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dme4n")
+theme_override_font_sizes/font_size = 16
+text = "USE DOOR"
+horizontal_alignment = 1

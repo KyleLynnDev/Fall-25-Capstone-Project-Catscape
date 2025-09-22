@@ -74,7 +74,6 @@ transform = Transform3D(0.368479, 0.393814, -0.842101, -0.100098, 0.91738, 0.385
 
 [node name="SceneTransitionRect" parent="CanvasLayer" instance=ExtResource("5_utw6h")]
 process_priority = 2
-visible = false
 z_index = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
@@ -83,10 +82,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -108.0
-offset_top = -221.0
-offset_right = 108.0
-offset_bottom = -69.0
+offset_left = -286.0
+offset_top = -162.0
+offset_right = -70.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -135,7 +134,7 @@ text = "Exit"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/VBoxContainer"]
 texture_filter = 1
-position = Vector2(103, 294)
+position = Vector2(291, 258)
 texture = ExtResource("3_0q8am")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/VBoxContainer/Sprite2D"]

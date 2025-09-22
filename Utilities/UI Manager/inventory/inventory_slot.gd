@@ -14,8 +14,15 @@ extends Control
 var item = null
 
 
+func _ready() -> void:
+	$innerRect.mouse_filter = Control.MOUSE_FILTER_IGNORE  # background lets clicks through
+	$itemButton.mouse_filter = Control.MOUSE_FILTER_STOP    # button is the click target
+	$itemButton.focus_mode = Control.FOCUS_ALL              # optional, for keyboard/pad
+
+
 func _on_item_button_mouse_exited() -> void:
 	details_panel.visible = false
+	
 
 
 func _on_item_button_mouse_entered() -> void:
