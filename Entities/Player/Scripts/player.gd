@@ -89,7 +89,7 @@ var interactCooldown = 0.1;
 func _ready() -> void:
 	Global.setPlayerReference(self)
 	Global.isPlayerInRange = false
-	self.position = Global.wherePlayerShouldSpawn
+	#self.position = Global.wherePlayerShouldSpawn
 
 
 
