@@ -1,6 +1,6 @@
 [gd_scene load_steps=75 format=3 uid="uid://cbvjid0cuf4nh"]
 
-[ext_resource type="AudioStream" uid="uid://eggj26mebekx" path="res://Sounds/Mountain Peak/Mountain_Peak_Amb.wav" id="1_lkifl"]
+[ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Entities/Player/Mountain_Peak_Amb.wav" id="1_c8w4r"]
 [ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders/skybox.gdshader" id="1_rlat0"]
 [ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders/bg_debug_sky.png" id="2_etn5g"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="3_etn5g"]
@@ -205,7 +205,7 @@ data = PackedVector3Array(-2.4495, 3.6401, 1.2973, -1.2247, 4.8718, 1.2973, -2.4
 [node name="MountainPeak_Blockout_01" type="Node3D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_lkifl")
+stream = ExtResource("1_c8w4r")
 autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
