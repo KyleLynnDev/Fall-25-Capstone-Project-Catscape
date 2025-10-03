@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csb5e0f37rkbj"
+path="res://.godot/imported/Crystal_Castle_Structure_01.obj-413da3ccf02b20248f66624f6e947ceb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Crystal_Castle_Structure_01.obj-413da3ccf02b20248f66624f6e947ceb.mesh"]
+
+source_file="res://Assets/Models/Crystal_Castle_Structure_01.obj"
+dest_files=["res://.godot/imported/Crystal_Castle_Structure_01.obj-413da3ccf02b20248f66624f6e947ceb.mesh", "res://.godot/imported/Crystal_Castle_Structure_01.obj-413da3ccf02b20248f66624f6e947ceb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

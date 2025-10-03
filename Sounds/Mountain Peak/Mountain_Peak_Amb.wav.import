@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eggj26mebekx"
+path="res://.godot/imported/Mountain_Peak_Amb.wav-c17e822ea1155b7dd2186d72c28dd030.sample"
+
+[deps]
+
+source_file="res://Sounds/Mountain Peak/Mountain_Peak_Amb.wav"
+dest_files=["res://.godot/imported/Mountain_Peak_Amb.wav-c17e822ea1155b7dd2186d72c28dd030.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

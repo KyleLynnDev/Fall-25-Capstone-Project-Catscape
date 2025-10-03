@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm18ko55ldc3c"
+path="res://.godot/imported/bench.obj-862e754b5bdbbb3cf8f15917157e09ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bench.obj-862e754b5bdbbb3cf8f15917157e09ed.mesh"]
+
+source_file="res://Assets/Models/bench.obj"
+dest_files=["res://.godot/imported/bench.obj-862e754b5bdbbb3cf8f15917157e09ed.mesh", "res://.godot/imported/bench.obj-862e754b5bdbbb3cf8f15917157e09ed.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
