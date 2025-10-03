@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://de1nt31hqrvp4"]
+[gd_scene load_steps=13 format=3 uid="uid://de1nt31hqrvp4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nj4ql"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,8 +16,6 @@ fog_light_color = Color(0.624935, 0.657231, 0.707977, 1)
 fog_sun_scatter = 0.5
 fog_density = 0.02
 fog_sky_affect = 0.7
-
-[sub_resource type="BoxMesh" id="BoxMesh_w8y2c"]
 
 [sub_resource type="Gradient" id="Gradient_nj4ql"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -77,9 +75,6 @@ material = SubResource("StandardMaterial3D_q65g6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ldmgi")
-
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_w8y2c")
 
 [node name="Snow" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
