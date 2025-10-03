@@ -151,3 +151,5 @@ autoplay = "shrinkAndGrow"
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Test Level" to="." method="_on_test_level_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
+
+[editable path="Level"]
