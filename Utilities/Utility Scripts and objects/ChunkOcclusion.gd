@@ -1,7 +1,7 @@
 extends Area3D
 
 
-@export var chunk : MeshInstance3D
+@export var chunk : Node3D
 
 
 

@@ -98,7 +98,7 @@ func _ready() -> void:
 	var UICooldown = 0.2; 
 	Global.setPlayerReference(self)
 	Global.isPlayerInRange = false
-	self.position = Global.wherePlayerShouldSpawn
+	#self.position = Global.wherePlayerShouldSpawn
 
 
 
