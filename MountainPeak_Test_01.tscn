@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbvjid0cuf4nh"]
+[gd_scene load_steps=17 format=3 uid="uid://cbvjid0cuf4nh"]
 
-[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders/skybox.gdshader" id="1_rlat0"]
-[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders/bg_debug_sky.png" id="2_etn5g"]
+[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="1_rlat0"]
+[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="2_etn5g"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="3_etn5g"]
 [ext_resource type="ArrayMesh" uid="uid://wuv4u7k5vnrw" path="res://Entities/Player/Mushroom_01.obj" id="4_2tn14"]
 [ext_resource type="ArrayMesh" uid="uid://bbb55vei4uoya" path="res://Entities/Player/Crystal_House.obj" id="5_qajjc"]
@@ -9,6 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d3gvc3cwp8piu" path="res://Entities/Player/Block_01.obj" id="7_qhmus"]
 [ext_resource type="ArrayMesh" uid="uid://kvlfrxy033wt" path="res://Entities/Player/Block_02.obj" id="8_idf4a"]
 [ext_resource type="PackedScene" uid="uid://chrkjvxphpurc" path="res://Entities/Decorations/Crystal/crystal.gltf" id="9_q2s0d"]
+[ext_resource type="PackedScene" uid="uid://bkrowg6a64tey" path="res://block_start.tscn" id="10_idf4a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2tn14"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -398,7 +399,7 @@ use_collision = true
 radius = 1.16433
 
 [node name="Player_Cat" parent="." instance=ExtResource("3_etn5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.335863, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.918368, 0)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(3.54237, 0, 0, 0, 1.64229, 0, 0, 0, 2.93791, 5.58729, 0, -9.5934)
@@ -828,9 +829,8 @@ transform = Transform3D(-0.118881, 0, 1.00234, 0, 0.56, 0, -0.815693, 0, -0.0849
 [node name="crystal4" parent="." instance=ExtResource("9_q2s0d")]
 transform = Transform3D(0.887327, 0, 0.570878, 0, 0.56, 0, -0.464574, 0, 0.633908, -3.51316, -0.258862, -2.2533)
 
-[node name="Block Start" type="MeshInstance3D" parent="."]
+[node name="Block Start" parent="." instance=ExtResource("10_idf4a")]
 transform = Transform3D(3.04854, 0, 0, 0, 1, 0, 0, 0, 2.23969, 0.0178437, -0.258862, 0.260862)
-mesh = ExtResource("8_idf4a")
 
 [node name="CrystalHouse6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.29564, 0, 0.742531, 0, 1.49333, 0, -0.742531, 0, 1.29564, 62.2488, 43.5343, -29.3299)

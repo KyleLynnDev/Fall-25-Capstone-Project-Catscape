@@ -28,7 +28,7 @@ var IsCurrentlyInDialogue : bool = false;
 
 
 ### Player Position in levels
-var wherePlayerShouldSpawn : Vector3 = Vector3(0,0,0); 
+var wherePlayerShouldSpawn : Vector3; 
 
 var checkpointPosition : Vector3;
 
