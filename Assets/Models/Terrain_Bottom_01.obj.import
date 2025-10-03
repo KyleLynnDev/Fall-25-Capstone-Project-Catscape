@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crdqydy55m1ln"
+path="res://.godot/imported/Terrain_Bottom_01.obj-33e16d2a8be1187225fd7f6c296ea613.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Terrain_Bottom_01.obj-33e16d2a8be1187225fd7f6c296ea613.mesh"]
+
+source_file="res://Assets/Models/Terrain_Bottom_01.obj"
+dest_files=["res://.godot/imported/Terrain_Bottom_01.obj-33e16d2a8be1187225fd7f6c296ea613.mesh", "res://.godot/imported/Terrain_Bottom_01.obj-33e16d2a8be1187225fd7f6c296ea613.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

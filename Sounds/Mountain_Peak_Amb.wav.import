@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ddl1vfuoth85n"
-path="res://.godot/imported/Mountain_Peak_Amb.wav-78a8174e9a8922fb86a8a5197a28a7d2.sample"
+path="res://.godot/imported/Mountain_Peak_Amb.wav-6a166634f31fba37d4cb67f7d69e36ca.sample"
 
 [deps]
 
-source_file="res://Entities/Player/Mountain_Peak_Amb.wav"
-dest_files=["res://.godot/imported/Mountain_Peak_Amb.wav-78a8174e9a8922fb86a8a5197a28a7d2.sample"]
+source_file="res://Sounds/Mountain_Peak_Amb.wav"
+dest_files=["res://.godot/imported/Mountain_Peak_Amb.wav-6a166634f31fba37d4cb67f7d69e36ca.sample"]
 
 [params]
 
