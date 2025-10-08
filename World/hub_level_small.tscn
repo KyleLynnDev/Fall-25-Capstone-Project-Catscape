@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
 [ext_resource type="PackedScene" uid="uid://c62vf21wlw7gh" path="res://World/skybox_hub.tscn" id="3_yx075"]
 [ext_resource type="PackedScene" uid="uid://de2sfo01xxxii" path="res://World/cat's_cape_level_chunks.tscn" id="4_evskn"]
-[ext_resource type="PackedScene" uid="uid://bvdihqlbspw0m" path="res://World/catscape_questnyan_mark_v_1.tscn" id="6_85dfj"]
+[ext_resource type="PackedScene" uid="uid://rmyxrim7joiy" path="res://World/quest-nyan_mark.tscn" id="5_85dfj"]
 [ext_resource type="PackedScene" uid="uid://ds0rmrbfguq4i" path="res://World/catscape_polytree_1.tscn" id="6_pblp5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
@@ -101,10 +101,10 @@ operation = 2
 size = Vector3(12, 3, 6)
 metadata/_edit_lock_ = true
 
-[node name="catscape_questnyan_mark_v1" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="2" instance=ExtResource("6_85dfj")]
-transform = Transform3D(2.04897e-09, 0, 0.015625, 0, 0.015625, 0, -0.015625, 0, 2.04897e-09, -3.00516e-08, 0, 0.34375)
+[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="2"]
 
-[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="3"]
+[node name="catscape_quest-nyan_mark" parent="cat\'s_cape_level_chunks/Chunk 1_000/NPCs" instance=ExtResource("5_85dfj")]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0.3)
 
 [node name="Pier Combiner" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 5, 101)
