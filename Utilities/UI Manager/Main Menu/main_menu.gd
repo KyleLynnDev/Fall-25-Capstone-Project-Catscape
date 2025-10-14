@@ -16,6 +16,7 @@ func _ready() -> void:
 	ui_layer.add_child(menu_particles)
 	menu_particles.position = get_viewport().get_visible_rect().size / 2.0
 	menu_particles.get_node("CPUParticles2D").emitting = true
+	SoundManager.play_ambient(preload("res://Sounds/Mountain_Peak_Amb.wav"))
 
 
 func _process(delta):
