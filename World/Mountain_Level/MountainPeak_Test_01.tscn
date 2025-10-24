@@ -1,6 +1,7 @@
-[gd_scene load_steps=190 format=3 uid="uid://cbvjid0cuf4nh"]
+[gd_scene load_steps=191 format=3 uid="uid://cbvjid0cuf4nh"]
 
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_u563e"]
+[ext_resource type="PackedScene" uid="uid://dwrawcavyixem" path="res://World/skybox_mountain_peak.tscn" id="2_07khm"]
 [ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="2_axdxp"]
 [ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="3_07khm"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="4_tkye4"]
@@ -496,7 +497,11 @@ light_color = Color(0.831373, 1, 1, 1)
 light_energy = 0.059
 shadow_enabled = true
 
+[node name="Skybox Mountain Peak" parent="." instance=ExtResource("2_07khm")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
 [node name="Skybox" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_gd07y")
 
 [node name="Player_Stubert" parent="." instance=ExtResource("4_tkye4")]
