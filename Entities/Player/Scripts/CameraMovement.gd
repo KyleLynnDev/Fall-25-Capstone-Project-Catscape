@@ -69,9 +69,9 @@ func handle_gamepad_input(delta):
 		begin_focus()
 	
 	
-	if Input.is_action_pressed("cameraZoomIn"):
+	if Input.is_action_pressed("cameraZoomIn") and UI.canZoom:
 		spring_arm.spring_length = max(min_zoom, spring_arm.spring_length - zoom_speed * 0.1)
-	if Input.is_action_pressed("cameraZoomOut"):
+	if Input.is_action_pressed("cameraZoomOut") and UI.canZoom:
 		spring_arm.spring_length = min(max_zoom, spring_arm.spring_length + zoom_speed * 0.1)
 		
 	

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxnvv0o8klnen"]
+
+[ext_resource type="Script" uid="uid://d6jwgh7xar10" path="res://Common/Animations/sinusoidal_animation_parent.gd" id="1_rkgor"]
+
+[node name="Sinusoidal Animation Parent" type="Node3D"]
+script = ExtResource("1_rkgor")
