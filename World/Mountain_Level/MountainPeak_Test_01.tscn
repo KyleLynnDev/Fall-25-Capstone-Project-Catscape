@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://cbvjid0cuf4nh"]
+[gd_scene load_steps=198 format=3 uid="uid://cbvjid0cuf4nh"]
 
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_u563e"]
 [ext_resource type="PackedScene" uid="uid://dwrawcavyixem" path="res://World/skybox_mountain_peak.tscn" id="2_07khm"]
@@ -50,6 +50,9 @@
 [ext_resource type="PackedScene" uid="uid://doso2jsgo7s1e" path="res://Utilities/Utility Scripts and objects/kill_plane.tscn" id="48_fy3d0"]
 [ext_resource type="Texture2D" uid="uid://ct1hgtywj817t" path="res://Assets/Models/Mountain_02.png" id="49_u563e"]
 [ext_resource type="PackedScene" uid="uid://b0fpy62s5mnj" path="res://Utilities/Utility Scripts and objects/checkpoint.tscn" id="49_waqn8"]
+[ext_resource type="Texture2D" uid="uid://djt5dl1n4k4bq" path="res://Assets/Models/Mountain_Wall_Large_02.png" id="51_083vy"]
+[ext_resource type="Texture2D" uid="uid://bq058sasq0ts5" path="res://Assets/Models/Mountain_Wall_Large_01.png" id="51_tkye4"]
+[ext_resource type="ArrayMesh" uid="uid://dga0ugarfa15b" path="res://Assets/Models/Mountain_Walls_Large_01.obj" id="52_083vy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2tn14"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -482,6 +485,18 @@ data = PackedVector3Array(7.0664, 0, -22.8084, 5.2997, 1.3103, -22.8084, 7.0664,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goc7l"]
 albedo_texture = ExtResource("49_u563e")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7i62m"]
+albedo_texture = ExtResource("51_083vy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcxcs"]
+albedo_texture = ExtResource("51_083vy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqokw"]
+albedo_texture = ExtResource("51_tkye4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weokk"]
+albedo_texture = ExtResource("51_083vy")
+
 [node name="MountainPeak_Blockout_01" type="Node3D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -903,7 +918,7 @@ skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/Do
 shape = SubResource("ConcavePolygonShape3D_t5d22")
 
 [node name="CrystalHouse6" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.838507, 0, -1.41903, 0, 1.64825, 0, 1.41903, 0, 0.838507, -113.441, -53.1204, -163.426)
+transform = Transform3D(0.838507, 0, -1.41903, 0, 1.64825, 0, 1.41903, 0, 0.838507, -113.441, -53.8015, -163.426)
 material_override = SubResource("StandardMaterial3D_mnfmh")
 mesh = ExtResource("17_goc7l")
 skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01")
@@ -1331,6 +1346,61 @@ skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/Do
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain22/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_x5tq8")
 
+[node name="SnowTerrain28" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.172, -55.343, -90.2514)
+material_override = SubResource("StandardMaterial3D_2ocfs")
+mesh = ExtResource("27_31om7")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01/Node3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NewSnowTerrain/SnowTerrain28"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain28/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5tq8")
+
+[node name="SnowTerrain29" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.172, -55.343, -26.6263)
+material_override = SubResource("StandardMaterial3D_2ocfs")
+mesh = ExtResource("27_31om7")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01/Node3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NewSnowTerrain/SnowTerrain29"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain29/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5tq8")
+
+[node name="SnowTerrain30" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198.94, -55.343, -26.6263)
+material_override = SubResource("StandardMaterial3D_2ocfs")
+mesh = ExtResource("27_31om7")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01/Node3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NewSnowTerrain/SnowTerrain30"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain30/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5tq8")
+
+[node name="SnowTerrain31" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.628, -55.343, -26.6263)
+material_override = SubResource("StandardMaterial3D_2ocfs")
+mesh = ExtResource("27_31om7")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01/Node3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NewSnowTerrain/SnowTerrain31"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain31/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5tq8")
+
+[node name="SnowTerrain32" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.628, -55.343, -90.7647)
+material_override = SubResource("StandardMaterial3D_2ocfs")
+mesh = ExtResource("27_31om7")
+skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/MountainPeak_Blockout_01/Node3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NewSnowTerrain/SnowTerrain32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NewSnowTerrain/SnowTerrain32/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x5tq8")
+
 [node name="SnowTerrain21" type="MeshInstance3D" parent="Node3D/NewSnowTerrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.113, -55.343, -153.924)
 material_override = SubResource("StandardMaterial3D_2ocfs")
@@ -1479,6 +1549,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.429, -64.8639, -155.735)
 [node name="SnowParticles24" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.218, -57.2203, -143.189)
 
+[node name="SnowParticles35" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.17, -65.8442, -154.171)
+
+[node name="SnowParticles36" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.887, -67.2372, -164.128)
+
 [node name="SnowParticles25" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.668, -66.4293, -143.189)
 
@@ -1500,8 +1576,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.8963, -1.08999, 36.5452)
 [node name="SnowParticles7" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.5843, -36.1245, -128.365)
 
+[node name="SnowParticles32" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6305, -37.7347, -128.365)
+
+[node name="SnowParticles33" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0745, -44.175, -133.461)
+
+[node name="SnowParticles34" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.103, -52.7373, -140.294)
+
 [node name="SnowParticles8" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41069, 3.08464, -40.3534)
+
+[node name="SnowParticles29" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6809, -14.7725, -64.049)
+
+[node name="SnowParticles30" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1093, -19.64, -78.5411)
+
+[node name="SnowParticles31" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.7776, -26.2838, -103.245)
 
 [node name="SnowParticles17" parent="Mountain_Peak_Level/SnowParticles" instance=ExtResource("31_sg5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.721, 3.66012, 10.6677)
@@ -3051,11 +3145,13 @@ skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/Do
 
 [node name="CSGBox3D34" type="CSGBox3D" parent="Mountain_Peak_Level"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 5.32587, -25.1902, -6.61985, -26.3243)
+visible = false
 use_collision = true
 size = Vector3(32.506, 11.9862, 5.69349)
 
 [node name="CSGBox3D35" type="CSGBox3D" parent="Mountain_Peak_Level"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 5.32587, -25.1902, -18.0764, -21.1841)
+visible = false
 use_collision = true
 size = Vector3(32.506, 11.9862, 3.76322)
 
@@ -3070,19 +3166,22 @@ material_override = SubResource("StandardMaterial3D_a6qwr")
 use_collision = true
 size = Vector3(32.506, 25.0263, 2.09401)
 
-[node name="CSGBox3D38" type="CSGBox3D" parent="Mountain_Peak_Level"]
+[node name="Blockout Cliffs" type="Node3D" parent="Mountain_Peak_Level"]
+visible = false
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="Mountain_Peak_Level/Blockout Cliffs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 5.32587, 48.0284, -51.0452, -94.5136)
 material_override = SubResource("StandardMaterial3D_latrb")
 use_collision = true
 size = Vector3(1.81374, 18.4685, 31.4784)
 
-[node name="CSGBox3D39" type="CSGBox3D" parent="Mountain_Peak_Level"]
+[node name="CSGBox3D39" type="CSGBox3D" parent="Mountain_Peak_Level/Blockout Cliffs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 5.32587, 56.7173, -36.8364, -94.5136)
 material_override = SubResource("StandardMaterial3D_tg61s")
 use_collision = true
 size = Vector3(1.81374, 18.4685, 31.4784)
 
-[node name="CSGBox3D40" type="CSGBox3D" parent="Mountain_Peak_Level"]
+[node name="CSGBox3D40" type="CSGBox3D" parent="Mountain_Peak_Level/Blockout Cliffs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 5.32587, 66.1086, -23.4278, -94.5136)
 material_override = SubResource("StandardMaterial3D_tkbgo")
 use_collision = true
@@ -3119,6 +3218,26 @@ mesh = ExtResource("44_5okr0")
 [node name="StaticBody3D" type="StaticBody3D" parent="Mountain_Peak_Level/Mountain06"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain_Peak_Level/Mountain06/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7wugh")
+
+[node name="Mountain08" type="MeshInstance3D" parent="Mountain_Peak_Level"]
+transform = Transform3D(0.274059, 0, 1.98114, 0, 2, 0, -1.98114, 0, 0.274059, -274.174, -56.2324, 45.9705)
+material_override = SubResource("StandardMaterial3D_tkye4")
+mesh = ExtResource("44_5okr0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mountain_Peak_Level/Mountain08"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain_Peak_Level/Mountain08/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7wugh")
+
+[node name="Mountain09" type="MeshInstance3D" parent="Mountain_Peak_Level"]
+transform = Transform3D(-1.94927, 0, 0.447623, 0, 2, 0, -0.447623, 0, -1.94927, -348.359, -56.2324, -76.8262)
+material_override = SubResource("StandardMaterial3D_tkye4")
+mesh = ExtResource("44_5okr0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mountain_Peak_Level/Mountain09"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain_Peak_Level/Mountain09/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7wugh")
 
 [node name="Mountain02" type="MeshInstance3D" parent="Mountain_Peak_Level"]
@@ -3162,7 +3281,7 @@ mesh = ExtResource("44_5okr0")
 shape = SubResource("ConcavePolygonShape3D_4ya2o")
 
 [node name="Mountain05" type="MeshInstance3D" parent="Mountain_Peak_Level"]
-transform = Transform3D(0.037973, 0, -0.935883, 0, 1.24433, 0, 0.869441, 0, 0.0408748, -285.814, -56.3198, -26.382)
+transform = Transform3D(0.037973, 0, -0.935883, 0, 1.24433, 0, 0.869441, 0, 0.0408748, -339.377, -56.3198, -0.370083)
 material_override = SubResource("StandardMaterial3D_54pr5")
 mesh = ExtResource("44_5okr0")
 
@@ -3172,7 +3291,7 @@ mesh = ExtResource("44_5okr0")
 shape = SubResource("ConcavePolygonShape3D_meg47")
 
 [node name="HillBarrier02" type="MeshInstance3D" parent="Mountain_Peak_Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.806, -55.8549, -151.264)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.873, -55.8549, -151.264)
 material_override = SubResource("StandardMaterial3D_1v7do")
 mesh = ExtResource("30_yy5xe")
 
@@ -3216,7 +3335,7 @@ mesh = ExtResource("47_st023")
 shape = SubResource("ConcavePolygonShape3D_083vy")
 
 [node name="Mountain03" type="MeshInstance3D" parent="."]
-transform = Transform3D(21.1129, 0, 0, 0, 21.1129, 0, 0, 0, 21.1129, 138.428, -99.65, -94.04)
+transform = Transform3D(21.1129, 0, 0, 0, 21.1129, 0, 0, 0, 21.1129, 175.615, -48.4649, -134.674)
 material_override = SubResource("StandardMaterial3D_fq8tp")
 mesh = ExtResource("47_st023")
 
@@ -3236,7 +3355,7 @@ mesh = ExtResource("30_yy5xe")
 shape = SubResource("ConcavePolygonShape3D_axdxp")
 
 [node name="HillBarrier03" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.0102098, 0, -0.999947, 0, 1, 0, 0.999947, 0, -0.0102098, -135.175, -56.1744, -187.595)
+transform = Transform3D(-0.0102098, 0, -0.999947, 0, 1, 0, 0.999947, 0, -0.0102098, -135.175, -56.1744, -183.647)
 material_override = SubResource("StandardMaterial3D_4877o")
 mesh = ExtResource("30_yy5xe")
 
@@ -3294,3 +3413,43 @@ mesh = ExtResource("47_st023")
 transform = Transform3D(4.94929, 0, 11.3172, 0, 12.3521, 0, -11.3172, 0, 4.94929, 101.833, -1.92579, 197.166)
 material_override = SubResource("StandardMaterial3D_goc7l")
 mesh = ExtResource("47_st023")
+
+[node name="Cliffs02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.442502, 0, 62.3944, 0, 23.7709, 0, -31.9292, 0, 0.864713, -13.2, -26.3094, -22.096)
+material_override = SubResource("StandardMaterial3D_7i62m")
+mesh = ExtResource("41_cimpt")
+
+[node name="MountainWallsLarge01" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.38816, 0, 43.7294, 0, 29.6629, 0, -31.0422, 0, 4.77293, -154.608, -30.9186, -41.9733)
+material_override = SubResource("StandardMaterial3D_dcxcs")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.72865, 0, 22.3109, 0, 21.15, 0, -15.8379, 0, 2.43517, -70.219, -24.6887, -46.5206)
+material_override = SubResource("StandardMaterial3D_hqokw")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge06" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.10002, 0, 15.6937, 0, 6.07582, 0, -8.3656, 0, -0.187635, -31.7515, -1.08477, -53.7871)
+material_override = SubResource("StandardMaterial3D_hqokw")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge07" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0998807, 0, 17.5175, 0, 6.07582, 0, -8.35397, 0, -0.209441, 30.4337, -1.08477, -53.7871)
+material_override = SubResource("StandardMaterial3D_hqokw")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.36954, 0, 39.5484, 0, 26.9828, 0, -28.0742, 0, -13.199, 95.9953, -33.2807, -46.0291)
+material_override = SubResource("StandardMaterial3D_weokk")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge05" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.84342, 0, 28.8858, 0, 13.6069, 0, -20.5052, 0, -9.6404, 39.1599, -26.0501, -32.2907)
+material_override = SubResource("StandardMaterial3D_weokk")
+mesh = ExtResource("52_083vy")
+
+[node name="MountainWallsLarge04" type="MeshInstance3D" parent="."]
+transform = Transform3D(-28.2713, 0, -8.2115, 0, 26.9828, 0, 3.62916, 0, -63.9679, 78.2382, -64.3059, -122.407)
+material_override = SubResource("StandardMaterial3D_weokk")
+mesh = ExtResource("52_083vy")

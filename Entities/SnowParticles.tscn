@@ -79,6 +79,7 @@ material = SubResource("StandardMaterial3D_q65g6")
 environment = SubResource("Environment_ldmgi")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_w8y2c")
 
 [node name="Snow" type="GPUParticles3D" parent="."]
