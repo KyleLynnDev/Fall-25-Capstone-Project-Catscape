@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b54uw1ssajkro"]
+[gd_scene load_steps=19 format=3 uid="uid://b54uw1ssajkro"]
 
 [ext_resource type="Script" uid="uid://du4l2mebr8xv1" path="res://Utilities/Utility Scripts and objects/shakable_object.gd" id="1_mdv6m"]
 [ext_resource type="AudioStream" uid="uid://67kom2vmjl6j" path="res://Assets/Audio/SFX/Fantozzi-StoneR1.ogg" id="2_aneau"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ocbb6xi5fpq8" path="res://Assets/Audio/SFX/Fantozzi-StoneR2.ogg" id="3_r71gv"]
 [ext_resource type="AudioStream" uid="uid://e7380fhhgowq" path="res://Assets/Audio/SFX/Fantozzi-StoneR3.ogg" id="4_dkf7v"]
 [ext_resource type="Texture2D" uid="uid://bg7js7kpc1jqf" path="res://Assets/Shaders Materials Textures/tall_grass_tuft.png" id="6_r71gv"]
+[ext_resource type="Texture2D" uid="uid://dwyh4ay8tujdh" path="res://HEART.png" id="7_dkf7v"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7do7u"]
 
@@ -39,6 +40,36 @@ texture_filter = 0
 
 [sub_resource type="QuadMesh" id="QuadMesh_6o4pm"]
 material = SubResource("StandardMaterial3D_8b18v")
+
+[sub_resource type="Curve" id="Curve_camqw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x81r8"]
+curve = SubResource("Curve_camqw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vmnk7"]
+emission_shape = 1
+emission_sphere_radius = 0.25
+gravity = Vector3(0, 1, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_x81r8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_camqw"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("7_dkf7v")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_x81r8"]
+material = SubResource("StandardMaterial3D_camqw")
+size = Vector2(0.25, 0.25)
 
 [node name="Shakable Object" type="Node3D"]
 script = ExtResource("1_mdv6m")
@@ -78,3 +109,14 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
 mesh = SubResource("QuadMesh_6o4pm")
 skeleton = NodePath("../..")
+
+[node name="ItemParticles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18875, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ItemParticles"]
+emitting = false
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.5
+process_material = SubResource("ParticleProcessMaterial_vmnk7")
+draw_pass_1 = SubResource("QuadMesh_x81r8")
