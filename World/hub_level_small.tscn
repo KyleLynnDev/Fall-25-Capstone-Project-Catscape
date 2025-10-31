@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu0baqjmwddih"]
+[gd_scene load_steps=11 format=3 uid="uid://bu0baqjmwddih"]
 
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="2_iycnp"]
 [ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://de2sfo01xxxii" path="res://World/cat's_cape_level_chunks.tscn" id="4_evskn"]
 [ext_resource type="PackedScene" uid="uid://rmyxrim7joiy" path="res://World/quest-nyan_mark.tscn" id="5_85dfj"]
 [ext_resource type="PackedScene" uid="uid://ds0rmrbfguq4i" path="res://World/catscape_polytree_1.tscn" id="6_pblp5"]
+[ext_resource type="PackedScene" uid="uid://t2h6tpsyorf" path="res://World/cat's_eye_marble_ice_&_snow.tscn" id="7_pblp5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_top_color = Color(0.0470588, 0.705882, 0.941176, 1)
@@ -26,7 +27,7 @@ glow_enabled = true
 [node name="Main" type="Node3D"]
 
 [node name="Player_New" parent="." instance=ExtResource("2_iycnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 12.5, 0)
 
 [node name="Enviroment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
@@ -46,65 +47,590 @@ shadow_enabled = true
 
 [node name="cat\'s_cape_level_chunks" parent="." instance=ExtResource("4_evskn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="StaticBody3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="0"]
 metadata/_edit_lock_ = true
 
-[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="1"]
+[node name="CollisionShape3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/StaticBody3D" index="0"]
+metadata/_edit_lock_ = true
 
-[node name="catscape_polytree_1" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
-transform = Transform3D(-0.00599147, 0, -0.00501372, 0, 0.0078125, 0, 0.00501372, 0, -0.00599147, 0.814003, 0, -0.836528)
+[node name="Buildings" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="1"]
 
-[node name="catscape_polytree_4" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
-transform = Transform3D(0.00744741, 0, -0.00236032, 0, 0.0078125, 0, 0.00236032, 0, 0.00744741, 0.785756, 0, -0.624816)
-
-[node name="catscape_polytree_5" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
-transform = Transform3D(-0.00156171, 0, -0.00765481, 0, 0.0078125, 0, 0.00765481, 0, -0.00156171, 0.790697, 0, -0.422256)
-
-[node name="catscape_polytree_2" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
-transform = Transform3D(-0.00640338, 0, -0.00447569, 0, 0.0078125, 0, 0.00447569, 0, -0.00640338, 0.599509, 0, -0.787275)
-
-[node name="catscape_polytree_3" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
-transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.422566, 0, -0.837637)
-
-[node name="Town Center Combiner" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations"]
-transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0, 0, 0)
+[node name="Cathedral Combiner" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.421875, 0.1875, 3.68815e-08)
 use_collision = true
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+[node name="Level 1" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner"]
+size = Vector3(24, 12, 24)
+metadata/_edit_lock_ = true
+
+[node name="Room Hollow" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+operation = 2
+size = Vector3(23, 10, 23)
+
+[node name="Doorway" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -3, 0)
+operation = 2
+size = Vector3(1, 4, 4)
+metadata/_edit_lock_ = true
+
+[node name="Pillar 1" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3, 6)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 2" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3, -6)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 3" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, 4)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 4" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, -4)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 5" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -3, 0)
+radius = 0.25
+height = 4.0
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 12)
 radius = 2.0
-height = 6.0
+height = 16.0
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner"]
-inner_radius = 7.0
-outer_radius = 8.0
-ring_sides = 5
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -12)
+radius = 2.0
+height = 16.0
 
-[node name="CSGTorus3D2" type="CSGTorus3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner"]
-inner_radius = 26.0
-outer_radius = 28.0
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -12)
+radius = 2.0
+height = 16.0
 
-[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner/CSGTorus3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 11)
+radius = 2.0
+height = 16.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 1"]
+transform = Transform3D(1, 7.81597e-14, 3.41647e-21, 0, -4.37114e-08, 1, 7.81597e-14, -1, -4.37114e-08, -0.5, 6.5, -2.62268e-07)
+light_energy = 16.0
+light_indirect_energy = 2.0
+spot_range = 16.0
+spot_angle = 120.0
+
+[node name="Level 2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+size = Vector3(20, 8, 20)
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 10)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -10)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -10)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 10)
+radius = 2.0
+height = 12.0
+
+[node name="Hollower" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
 operation = 2
-size = Vector3(12, 3, 6)
-metadata/_edit_lock_ = true
+size = Vector3(19.9919, 8, 19.9119)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner/CSGTorus3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+[node name="Level 3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 0)
+size = Vector3(16, 8, 16)
+
+[node name="Roof" type="CSGSphere3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+radius = 8.0
+
+[node name="Roof Hollower" type="CSGSphere3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99922, 0)
 operation = 2
-size = Vector3(6, 3, 12)
-metadata/_edit_lock_ = true
+radius = 7.65966
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/Town Center Combiner/CSGTorus3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 8)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -8)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -8)
+radius = 2.0
+height = 12.0
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner/Level 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 8)
+radius = 2.0
+height = 12.0
+
+[node name="Hollower 2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Buildings/Cathedral Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 operation = 2
-size = Vector3(12, 3, 6)
-metadata/_edit_lock_ = true
+size = Vector3(15.9883, 8, 15.967)
 
-[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="2"]
+[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="2"]
+
+[node name="catscape_polytree_1" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00264768, 0, -0.00735016, 0, 0.0078125, 0, 0.00735016, 0, -0.00264768, 0.773803, 2.98023e-08, -0.78385)
+
+[node name="catscape_polytree_4" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(0.00706151, 0, 0.00334217, 0, 0.0078125, 0, -0.00334217, 0, 0.00706151, 0.792936, 0, -0.555454)
+
+[node name="catscape_polytree_5" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(0.00663963, 0, -0.00411708, 0, 0.0078125, 0, 0.00411708, 0, 0.00663963, 0.567429, 0, -0.479319)
+
+[node name="catscape_polytree_2" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.000634585, 0, -0.00778668, 0, 0.0078125, 0, 0.00778668, 0, -0.000634585, 0.564255, 0, -0.705224)
+
+[node name="catscape_polytree_3" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.342796, 0, -0.587352)
+
+[node name="catscape_polytree_6" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.147081, -5.96046e-08, -0.710348)
+
+[node name="catscape_polytree_10" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.175366, -5.96046e-08, 0.508297)
+
+[node name="catscape_polytree_11" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.379926, -5.96046e-08, 0.515443)
+
+[node name="catscape_polytree_12" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.631279, -5.96046e-08, 0.50565)
+
+[node name="catscape_polytree_13" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.694297, -5.96046e-08, 0.694561)
+
+[node name="catscape_polytree_14" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.466359, -5.96046e-08, 0.702479)
+
+[node name="catscape_polytree_15" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.213559, -5.96046e-08, 0.752618)
+
+[node name="catscape_polytree_16" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, -0.0357964, -5.96046e-08, 0.711341)
+
+[node name="catscape_polytree_17" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.0676438, -5.96046e-08, 0.886674)
+
+[node name="catscape_polytree_18" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.370084, -5.96046e-08, 0.891214)
+
+[node name="catscape_polytree_19" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.646624, -5.96046e-08, 0.887421)
+
+[node name="catscape_polytree_7" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.366904, -5.96046e-08, -0.800752)
+
+[node name="catscape_polytree_8" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.602158, -5.96046e-08, -0.906531)
+
+[node name="catscape_polytree_9" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("6_pblp5")]
+transform = Transform3D(-0.00202202, 0, 0.00754628, 0, 0.0078125, 0, -0.00754628, 0, -0.00202202, 0.144162, -1.19209e-07, -0.869026)
+
+[node name="catscape_cat\'s_eye_marble" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations" instance=ExtResource("7_pblp5")]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.515625, 0.15625, -0.1875)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, -0.375, -0.015625, -3.27836e-08)
+inner_radius = 16.0
+outer_radius = 18.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/CSGTorus3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+operation = 2
+size = Vector3(4, 3, 9)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/CSGTorus3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+operation = 2
+size = Vector3(9, 3, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/CSGTorus3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+operation = 2
+size = Vector3(9, 3, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_000/Decorations/CSGTorus3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0243, 0, 0)
+operation = 2
+size = Vector3(6, 3, 29)
+
+[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_000" index="3"]
 
 [node name="catscape_quest-nyan_mark" parent="cat\'s_cape_level_chunks/Chunk 1_000/NPCs" instance=ExtResource("5_85dfj")]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0, 0.3)
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.375, 0, 2.98023e-08)
+
+[node name="StaticBody3D" parent="cat\'s_cape_level_chunks/Chunk 1_001" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" parent="cat\'s_cape_level_chunks/Chunk 1_001/StaticBody3D" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_001" index="1"]
+
+[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_001" index="2"]
+
+[node name="Buildings" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_001" index="3"]
+
+[node name="StaticBody3D" parent="cat\'s_cape_level_chunks/Chunk 1_002" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/StaticBody3D" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Buildings" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_002" index="1"]
+
+[node name="Shop Combiner2" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings"]
+transform = Transform3D(-1.36598e-09, 0, -0.03125, 0, 0.03125, 0, 0.03125, 0, -1.36598e-09, -1.53947e-08, 0.015625, 0.8125)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-05, 2.5, -17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00004, 2.5, 0)
+size = Vector3(4, 6, 18)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D13"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -3, 0)
+operation = 2
+radius = 5.0
+height = 6.0
+sides = 9
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9999, 8.5, -15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, -19.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.5, -27)
+size = Vector3(4, 2, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14441e-05, 2.5, 17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00003, 8.5, 15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133514, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00013, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50611, 2.5, 22.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62939e-06, 0.5, 27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99999, 2.5, 27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_002/Buildings/Shop Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99999, 4.5, 27)
+size = Vector3(4, 2, 4)
+
+[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_002" index="2"]
+
+[node name="NPCs" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_002" index="3"]
+
+[node name="StaticBody3D" parent="cat\'s_cape_level_chunks/Chunk 1_003" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" parent="cat\'s_cape_level_chunks/Chunk 1_003/StaticBody3D" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/StaticBody3D" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Buildings" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_008" index="1"]
+
+[node name="Shop Combiner" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings"]
+transform = Transform3D(0.03125, 0, 0, 0, 0.03125, 0, 0, 0, 0.03125, 0.8125, 0.015625, 1.53947e-08)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-05, 2.5, -17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00004, 2.5, 0)
+size = Vector3(4, 6, 18)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D13"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -3, 0)
+operation = 2
+radius = 5.0
+height = 6.0
+sides = 9
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9999, 8.5, -15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, -19.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.5, -27)
+size = Vector3(4, 2, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14441e-05, 2.5, 17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00003, 8.5, 15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133514, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00013, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50611, 2.5, 22.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62939e-06, 0.5, 27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99999, 2.5, 27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99999, 4.5, 27)
+size = Vector3(4, 2, 4)
+
+[node name="Shop Combiner3" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings"]
+transform = Transform3D(-1.36598e-09, 0, 0.03125, 0, 0.03125, 0, -0.03125, 0, -1.36598e-09, 2, 0.015625, 1.1875)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-05, 2.5, -17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00004, 2.5, 0)
+size = Vector3(4, 6, 18)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D13"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -3, 0)
+operation = 2
+radius = 5.0
+height = 6.0
+sides = 9
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9999, 8.5, -15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, -19.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.5, -27)
+size = Vector3(4, 2, 4)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14441e-05, 2.5, 17)
+size = Vector3(12, 6, 16)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0.5, 0)
+operation = 2
+size = Vector3(11, 4, 15)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00003, 8.5, 15)
+size = Vector3(8, 6, 12)
+
+[node name="Interior" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000133514, -0.5, 0)
+operation = 2
+size = Vector3(7, 5, 11)
+
+[node name="Door" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3/CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00013, -1.5, 0)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50611, 2.5, 22.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62939e-06, 0.5, 27)
+size = Vector3(12, 2, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99999, 2.5, 27)
+size = Vector3(8, 2, 4)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_008/Buildings/Shop Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99999, 4.5, 27)
+size = Vector3(4, 2, 4)
+
+[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_014" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.76837e-07)
+
+[node name="Gate Tower" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.718749, 0.171875, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_014/Decorations/Gate Tower"]
+radius = 5.0
+height = 16.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_014/Decorations/Gate Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
+size = Vector3(1, 16, 64)
+
+[node name="Decorations" type="Node3D" parent="cat\'s_cape_level_chunks/Chunk 1_015" index="1"]
+
+[node name="Gate Tower" type="CSGCombiner3D" parent="cat\'s_cape_level_chunks/Chunk 1_015/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.71875, 0.234375, 4.76837e-07)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="cat\'s_cape_level_chunks/Chunk 1_015/Decorations/Gate Tower"]
+radius = 5.0
+height = 16.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="cat\'s_cape_level_chunks/Chunk 1_015/Decorations/Gate Tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 0)
+size = Vector3(1, 16, 64)
 
 [node name="Pier Combiner" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 5, 101)
@@ -158,422 +684,966 @@ size = Vector3(6, 1, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 4.5)
 size = Vector3(6, 1, 3)
 
-[node name="Water" type="Node3D" parent="."]
+[node name="Ocean Chunks" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Water" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
+[node name="Water Chunk 1_000" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water33" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
+[node name="Water Chunk 1_001" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water2" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64)
+[node name="Water Chunk 1_002" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water3" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
+[node name="Water Chunk 1_003" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water4" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 128)
+[node name="Water Chunk 1_004" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water5" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 192)
+[node name="Water Chunk 1_005" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water46" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192)
+[node name="Water Chunk 1_006" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 320)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water47" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 128)
+[node name="Water Chunk 1_007" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water12" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 0)
+[node name="Water Chunk 1_008" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water13" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -64)
+[node name="Water Chunk 1_009" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water14" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 64)
+[node name="Water Chunk 1_010" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water15" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 128)
+[node name="Water Chunk 1_011" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water16" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 192)
+[node name="Water Chunk 1_012" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water17" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 0)
+[node name="Water Chunk 1_013" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water18" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -64)
+[node name="Water Chunk 1_014" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water20" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 64)
+[node name="Water Chunk 1_015" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 256)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water21" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 128)
+[node name="Water Chunk 1_016" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water22" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 192)
+[node name="Water Chunk 1_017" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water23" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water24" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water25" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 128)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water26" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 192)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water34" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water35" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water40" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water51" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -128)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water52" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -128)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water59" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water53" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -192)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water39" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 0)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water27" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water28" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 64)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water30" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 128)
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Water31" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_018" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water56" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_019" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_020" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_021" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_022" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_023" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_024" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_026" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_027" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, 192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_028" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_029" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_030" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_031" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_032" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_033" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_034" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_035" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_036" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_037" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_038" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, 128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_039" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_040" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_041" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_042" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_043" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_044" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_045" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_046" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_047" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_048" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_049" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, 64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_050" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_051" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_052" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_053" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_054" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_055" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_056" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_057" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_058" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_059" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_060" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, 0)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_061" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_062" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_063" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_064" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_065" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_066" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_067" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_068" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_069" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_070" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_071" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, -64)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_072" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_073" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_074" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -128)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water58" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_075" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_076" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_077" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_078" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_079" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_080" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_081" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_082" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, -128)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_083" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, -192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_084" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_085" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water54" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_086" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -192)
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Water Chunk 1_087" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water55" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_088" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water57" parent="Water" instance=ExtResource("2_tvlxj")]
+[node name="Water Chunk 1_089" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water36" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
+[node name="Water Chunk 1_090" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water37" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 128)
+[node name="Water Chunk 1_091" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Water38" parent="Water" instance=ExtResource("2_tvlxj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 192)
+[node name="Water Chunk 1_092" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, -192)
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Sea Bed Combiner" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, -0.4995, 0)
-visible = false
-use_collision = true
+[node name="Water Chunk 1_093" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320, 0, -192)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D44" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_094" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D45" type="CSGBox3D" parent="Sea Bed Combiner"]
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_095" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D48" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_096" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D49" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 64)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_097" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D50" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 128)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_098" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D51" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 128)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_099" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D52" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 192)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_100" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D53" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 192)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_101" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D81" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 192)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_102" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -256, 0, -256)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D86" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, 192)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_103" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D87" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, 192)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_104" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D88" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, 128)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_105" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D89" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, 128)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_106" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D90" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, 64)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_107" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D91" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, 64)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_108" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
-[node name="CSGBox3D92" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, 0)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D93" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, 0)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D94" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D95" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, -64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D96" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -128)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D97" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, -128)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D98" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191, 0, -192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D100" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127, 0, -192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D101" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, -192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D99" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 255, 0, -192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D102" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, 192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D103" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, 128)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D104" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, 64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D105" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, 0)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D106" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, -64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D107" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, -128)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D108" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 319, 0, -192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D46" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D54" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D55" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D56" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 128)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D57" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 192)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D58" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -64)
-size = Vector3(64, 0.001, 64)
-metadata/_edit_lock_ = true
-
-[node name="CSGBox3D47" type="CSGBox3D" parent="Sea Bed Combiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -64)
-size = Vector3(64, 0.001, 64)
+[node name="Water Chunk 1_109" parent="Ocean Chunks" instance=ExtResource("2_tvlxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -320)
+top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Audio Manager" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Manager"]
 autoplay = true
+
+[node name="House 1 Combiner" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, -23)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+
+[node name="House 1 Combiner8" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, -38)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+
+[node name="House 1 Combiner9" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, 38)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+
+[node name="House 1 Combiner2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, -8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, 8)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner4" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 11, 23)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner7" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 35, 11, -38)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner7/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner7/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.5, -3.4836)
+operation = 2
+size = Vector3(2, 3, 1.14734)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner7/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240173, 5.5, 0)
+operation = 2
+size = Vector3(7.48035, 5, 6)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner11" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-1, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -1, 35, 11, 38)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner11/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner11/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.5, -3.4836)
+operation = 2
+size = Vector3(2, 3, 1.14734)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner11/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240173, 5.5, 0)
+operation = 2
+size = Vector3(7.48035, 5, 6)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner10" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 71, 11, -53)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner10/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner10/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.5, -3.4836)
+operation = 2
+size = Vector3(2, 3, 1.14734)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner10/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240173, 5.5, 0)
+operation = 2
+size = Vector3(7.48035, 5, 6)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="House 1 Combiner12" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 71, 11, 53)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.5, 2)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner12/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(9, 6, 8)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="House 1 Combiner12/CSGBox3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -1.5, -3.4836)
+operation = 2
+size = Vector3(2, 3, 1.14734)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner12/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.240173, 5.5, 0)
+operation = 2
+size = Vector3(7.48035, 5, 6)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 3, 2)
+operation = 2
+size = Vector3(8, 4, 7)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5061, 2.5, 3.5)
+operation = 2
+size = Vector3(1, 3, 2)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -4)
+size = Vector3(9, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -4)
+size = Vector3(6, 2, 4)
+metadata/_edit_lock_ = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="House 1 Combiner12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
+size = Vector3(3, 2, 4)
+metadata/_edit_lock_ = true
 
 [editable path="cat\'s_cape_level_chunks"]
