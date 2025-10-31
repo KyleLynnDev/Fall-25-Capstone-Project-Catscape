@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d00uxfxk5ffh3"
-path.s3tc="res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"
+uid="uid://tnwu2ut8x53e"
+path.s3tc="res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png-3d091cd4f59549bdb14779dfeafe4c26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
+}
 
 [deps]
 
-source_file="res://Entities/NPCs/Sir Frog/Sir Frog Sprite.png"
-dest_files=["res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"]
+source_file="res://Assets/Models/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png"
+dest_files=["res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png-3d091cd4f59549bdb14779dfeafe4c26.s3tc.ctex"]
 
 [params]
 
