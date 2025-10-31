@@ -19,4 +19,7 @@ func _ready() -> void:
 		SoundManager.save_settings()
 	)
 
-	apply_button.pressed.connect(SoundManager.save_settings)
+	apply_button.pressed.connect(func():
+		SoundManager.save_settings()
+		queue_free()
+	)
