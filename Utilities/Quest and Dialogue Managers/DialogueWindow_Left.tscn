@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dl0vrrpql11md"]
+[gd_scene load_steps=2 format=3 uid="uid://dl0vrrpql11md"]
+
+[ext_resource type="Script" uid="uid://c8owp2ymjgdch" path="res://Utilities/Quest and Dialogue Managers/dialogueManager.gd" id="1_xruqx"]
 
 [node name="DialogueWindow_Bottom" type="ColorRect"]
 custom_minimum_size = Vector2(128, 100)
@@ -7,6 +9,7 @@ offset_top = 67.0
 offset_right = 254.0
 offset_bottom = 288.0
 color = Color(0.0313726, 0.360784, 1, 0.305882)
+script = ExtResource("1_xruqx")
 
 [node name="Text_VBox" type="VBoxContainer" parent="."]
 layout_mode = 0
