@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d00uxfxk5ffh3"
-path.s3tc="res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"
+uid="uid://rcijxl1l4k62"
+path.s3tc="res://.godot/imported/Mushroom_05.png-b21649a95d32fb5cf130dea0bf7fbcc2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Entities/NPCs/Sir Frog/Sir Frog Sprite.png"
-dest_files=["res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"]
+source_file="res://Assets/Models/Mushroom_05.png"
+dest_files=["res://.godot/imported/Mushroom_05.png-b21649a95d32fb5cf130dea0bf7fbcc2.s3tc.ctex"]
 
 [params]
 
