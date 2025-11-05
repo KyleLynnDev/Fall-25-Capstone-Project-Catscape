@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://8w2ruqwc4kav"]
+
+[node name="DialogueWindow_Bottom" type="ColorRect"]
+custom_minimum_size = Vector2(128, 100)
+offset_left = 54.0
+offset_top = 243.0
+offset_right = 590.0
+offset_bottom = 343.0
+color = Color(0.0313726, 0.360784, 1, 0.305882)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 522.0
+offset_bottom = 87.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer"]
+modulate = Color(0.556863, 0.976471, 1, 1)
+custom_minimum_size = Vector2(100, 29.125)
+layout_mode = 2
+text = "Name"
+
+[node name="Message" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 54.81)
+layout_mode = 2
+text = "Message in a bottle, kind of thing. Do not mind what you find.
+Cake and a lie."

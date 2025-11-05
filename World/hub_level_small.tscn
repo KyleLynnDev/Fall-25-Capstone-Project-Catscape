@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
 [ext_resource type="PackedScene" uid="uid://c62vf21wlw7gh" path="res://World/skybox_hub.tscn" id="3_yx075"]
 [ext_resource type="PackedScene" uid="uid://de2sfo01xxxii" path="res://World/cat's_cape_level_chunks.tscn" id="4_evskn"]
-[ext_resource type="PackedScene" uid="uid://rmyxrim7joiy" path="res://World/quest-nyan_mark.tscn" id="5_85dfj"]
+[ext_resource type="PackedScene" path="res://World/quest-nyan_mark.tscn" id="5_85dfj"]
 [ext_resource type="PackedScene" uid="uid://ds0rmrbfguq4i" path="res://World/catscape_polytree_1.tscn" id="6_pblp5"]
 [ext_resource type="PackedScene" uid="uid://t2h6tpsyorf" path="res://World/cat's_eye_marble_ice_&_snow.tscn" id="7_pblp5"]
 
