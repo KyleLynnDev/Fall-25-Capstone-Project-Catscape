@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://t2h6tpsyorf"]
+[gd_scene load_steps=9 format=3 uid="uid://t2h6tpsyorf"]
 
 [ext_resource type="PackedScene" uid="uid://dktj3nski4xl" path="res://Assets/Models/catscape_cat's_eye_marble.glb" id="1_pg14y"]
 [ext_resource type="Shader" uid="uid://b5komhl3r61ex" path="res://Assets/Shaders Materials Textures/Cat's Eyes Marble Shaders/cat's_eye_marble_ice_&_snow.gdshader" id="2_kx20c"]
 [ext_resource type="Texture2D" uid="uid://cwy10g34joug6" path="res://Assets/Shaders Materials Textures/Cat's Eyes Marble Shaders/ice_&_snow_gradient.tres" id="3_e6ph3"]
+[ext_resource type="PackedScene" uid="uid://74f821qud2cb" path="res://Assets/ItemParticles.tscn" id="4_kx20c"]
 
 [sub_resource type="Gradient" id="Gradient_pg14y"]
 colors = PackedColorArray(0.705882, 0.705882, 0.705882, 0, 0.705882, 0.705882, 0.705882, 0)
@@ -44,3 +45,6 @@ omni_attenuation = 0.5
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "SphereAction"
+
+[node name="ItemParticles" parent="." index="3" instance=ExtResource("4_kx20c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.556949, 0)

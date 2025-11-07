@@ -2,8 +2,8 @@
 
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_ub7jv"]
 [ext_resource type="PackedScene" uid="uid://cdynvs076xhec" path="res://Entities/Decorations/Tree/tree.tscn" id="2_nir8h"]
-[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders/skybox.gdshader" id="3_605a5"]
-[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders/bg_debug_sky.png" id="4_3eptn"]
+[ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="3_605a5"]
+[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="4_3eptn"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="5_pqv5m"]
 [ext_resource type="ArrayMesh" uid="uid://crdqydy55m1ln" path="res://Assets/Models/Terrain_Bottom_01.obj" id="6_cfnfk"]
 [ext_resource type="PackedScene" uid="uid://de1nt31hqrvp4" path="res://Entities/SnowParticles.tscn" id="7_4srmo"]
