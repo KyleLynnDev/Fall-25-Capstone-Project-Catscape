@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://74f821qud2cb"]
 
-[ext_resource type="Texture2D" uid="uid://blwjdqp4g0ply" path="res://CatEffects.png" id="1_mha2f"]
+[ext_resource type="Texture2D" uid="uid://bng5khmunik5j" path="res://CatEffectsWhite.png" id="1_mha2f"]
 
 [sub_resource type="Curve" id="Curve_camqw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
