@@ -24,7 +24,9 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = %CameraPivot
 @onready var visual: Node3D = $Visual
 
-
+# ---- Footstep sound ----
+@export var footstep_sound: AudioStream = preload("res://Assets/Audio/SFX/Fantozzi-SandL1.ogg")
+var _step_cd := 0.0
 
 
 ##physics related private variables 
@@ -119,8 +121,15 @@ func _physics_process(delta: float) -> void:
 	
 	if(Global.canMove == false):
 		return
-
-
+	move_and_slide()
+	getFaceDirection()
+# --- Play footstep sounds ---
+	_step_cd -= delta
+	var speed_xz := Vector2(velocity.x, velocity.z).length()
+	if is_on_floor() and speed_xz > 0.4 and _step_cd <= 0.0:
+		var cd := 0.28 if Input.is_action_pressed("engageSprint") else 0.38
+		SoundManager.play_sfx(footstep_sound, 1.0 + randf_range(-0.03, 0.03))
+		_step_cd = cd
 	
 	if not is_on_floor(): #apply gravity
 		velocity.y -= gravity*delta

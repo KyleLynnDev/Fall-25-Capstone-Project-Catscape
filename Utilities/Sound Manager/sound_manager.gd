@@ -7,17 +7,31 @@ const SAVE_PATH := "user://audio.cfg"
 
 signal volumes_changed(vols: Dictionary)
 
+# ---------- Audio Players ----------
 var ambient: AudioStreamPlayer
 
+# SFX system (2D pooled players for overlapping one-shots)
+const SFX_POOL_SIZE := 8
+var sfx_pool: Array[AudioStreamPlayer] = []
+var _sfx_index := 0
+
+# ---------- Ready ----------
 func _ready() -> void:
-	# Your existing ambient player
+	# --- Ambient player setup ---
 	ambient = AudioStreamPlayer.new()
-	ambient.bus = "Ambience"            # must exist in your Bus Layout
+	ambient.bus = "Ambience"
 	add_child(ambient)
 
-	# Load saved volumes/mutes at boot
+	# --- SFX pool setup ---
+	for i in SFX_POOL_SIZE:
+		var p := AudioStreamPlayer.new()
+		p.bus = "SFX"
+		add_child(p)
+		sfx_pool.append(p)
+
+	# --- Load saved settings ---
 	load_settings()
-	_emit()  # let any UI know current values
+	_emit()  # notify UI of current values
 
 # ---------- Helpers ----------
 func _bus(name: String) -> int:
@@ -32,8 +46,8 @@ func _emit() -> void:
 		}
 	emit_signal("volumes_changed", d)
 
-# ---------- Public API called by UI/game ----------
-# Volumes are linear 0..1 in the API (UI-friendly), converted to dB internally.
+# ---------- Volume / Mute API ----------
+# Volumes are linear 0..1 for UI friendliness; converted to dB internally.
 
 func set_volume_linear(bus_name: String, lin: float) -> void:
 	lin = clamp(lin, 0.0, 1.0)
@@ -67,7 +81,9 @@ func load_settings() -> void:
 		if cfg.has_section_key("audio", "%s_mute" % b):
 			set_mute(b, bool(cfg.get_value("audio", "%s_mute" % b)))
 
-# ---------- Your existing playback helpers ----------
+# ---------- Playback Helpers ----------
+
+# Ambient looped music/background
 func play_ambient(stream: AudioStream, loop: bool = true) -> void:
 	if stream == null:
 		return
@@ -78,3 +94,25 @@ func play_ambient(stream: AudioStream, loop: bool = true) -> void:
 
 func stop_ambient() -> void:
 	ambient.stop()
+
+# ---------- NEW: SFX Playback ----------
+# Plays a short 2D sound on the SFX bus (footsteps, UI clicks, etc.)
+func play_sfx(stream: AudioStream, pitch: float = 1.0, volume_linear: float = 1.0) -> void:
+	if stream == null or sfx_pool.is_empty():
+		return
+
+	var player := sfx_pool[_sfx_index]
+	_sfx_index = (_sfx_index + 1) % SFX_POOL_SIZE
+
+	player.stop()
+	player.stream = stream
+	player.pitch_scale = pitch
+	player.volume_db = linear_to_db(clamp(volume_linear, 0.0, 1.0))
+	player.play()
+
+# Optional helper for random pick among variants
+func play_sfx_from(streams: Array, pitch_jitter: float = 0.04, volume_linear: float = 1.0) -> void:
+	if streams.is_empty():
+		return
+	var s: AudioStream = streams[randi() % streams.size()]
+	play_sfx(s, 1.0 + randf_range(-pitch_jitter, pitch_jitter), volume_linear)
