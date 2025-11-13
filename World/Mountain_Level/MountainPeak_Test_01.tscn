@@ -1,4 +1,4 @@
-[gd_scene load_steps=382 format=3 uid="uid://cbvjid0cuf4nh"]
+[gd_scene load_steps=385 format=3 uid="uid://cbvjid0cuf4nh"]
 
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_u563e"]
 [ext_resource type="PackedScene" uid="uid://dwrawcavyixem" path="res://World/skybox_mountain_peak.tscn" id="2_07khm"]
@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="3_07khm"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="4_tkye4"]
 [ext_resource type="Texture2D" uid="uid://c72atlruelk6m" path="res://Assets/Models/Snow_Terrain_01.png" id="5_083vy"]
+[ext_resource type="Texture2D" uid="uid://ykcyo7t3u601" path="res://abble.png" id="6_31om7"]
 [ext_resource type="ArrayMesh" uid="uid://dwxbuqvew78mu" path="res://Assets/Models/Snow_Terrain_01.obj" id="6_ngrhy"]
+[ext_resource type="Texture2D" uid="uid://b8hls7n6aufat" path="res://pickass.png" id="7_7qspg"]
 [ext_resource type="ArrayMesh" uid="uid://crdqydy55m1ln" path="res://Assets/Models/Terrain_Bottom_01.obj" id="7_vy7b5"]
 [ext_resource type="PackedScene" uid="uid://cdynvs076xhec" path="res://Entities/Decorations/Tree/tree.tscn" id="8_54pr5"]
 [ext_resource type="Texture2D" uid="uid://ckvkn5anksaa" path="res://tree-temp_snow.png" id="9_e575j"]
+[ext_resource type="PackedScene" uid="uid://b54uw1ssajkro" path="res://Utilities/Utility Scripts and objects/shakable_object.tscn" id="9_yy5xe"]
 [ext_resource type="PackedScene" uid="uid://csuuravr2ftop" path="res://Assets/Models/huge_stone.blend" id="10_ddau5"]
 [ext_resource type="PackedScene" uid="uid://b37ls5ftafkcs" path="res://Entities/Player/Art/Stubert Model Test.glb" id="11_fq8tp"]
 [ext_resource type="ArrayMesh" uid="uid://df2ek3rhtbpuo" path="res://Assets/Models/candy-cane-red.obj" id="12_s6wxr"]
@@ -1032,6 +1035,238 @@ mesh = SubResource("BoxMesh_gd07y")
 
 [node name="Player_Stubert" parent="." instance=ExtResource("4_tkye4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499889, 0)
+
+[node name="Item Example4" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -13.8556, 0.57621, -14.3975)
+interact_name = "Pickass"
+display_name = "Pickass"
+description = "it a pickass"
+effect = ""
+sprite_preview = ExtResource("7_7qspg")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example4" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example7" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -14.5735, 3.67191, 2.47559)
+interact_name = "Pickass"
+display_name = "Pickass"
+description = "it a pickass"
+effect = ""
+sprite_preview = ExtResource("7_7qspg")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example7" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example8" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -3.15796, 3.9088, 41.3307)
+interact_name = "Pickass"
+display_name = "Pickass"
+description = "it a pickass"
+effect = ""
+sprite_preview = ExtResource("7_7qspg")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example8" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example2" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -0.0423888, 0.641604, -3.84845)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("6_31om7")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example2" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example9" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 1.82954, 1.88588, -28.7484)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("6_31om7")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example9" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example3" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -1.48377, 0.641604, -6.52736)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("6_31om7")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example3" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example5" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -2.3529, 0.641604, -11.4075)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("6_31om7")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example5" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Item Example6" parent="." instance=ExtResource("57_ddau5")]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -0.479598, 0.641604, -15.334)
+interact_name = "Example Item"
+display_name = "Example Item"
+effect = "Stamina"
+sprite_preview = ExtResource("6_31om7")
+interact_type = "Item"
+
+[node name="Visual" parent="Item Example6" index="1"]
+texture = ExtResource("6_31om7")
+
+[node name="Shakable Object" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 17.1908, -0.0788475, 6.26838)
+
+[node name="Shakable Object2" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 15.6699, -0.0788475, 5.05689)
+
+[node name="Shakable Object3" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 15.9302, -0.0788475, 7.63032)
+
+[node name="Shakable Object4" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 11.9997, -0.0788475, 6.6072)
+
+[node name="Shakable Object5" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 15.4375, -0.0788475, 18.698)
+
+[node name="Shakable Object6" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -7.8818, -0.0788475, 21.9229)
+
+[node name="Shakable Object7" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -5.61693, 0.0669566, 19.9002)
+
+[node name="Shakable Object8" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -8.02606, 0.0509934, -2.64406)
+
+[node name="Shakable Object9" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -9.6252, 0.0509934, -21.261)
+
+[node name="Shakable Object14" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -9.6252, 0.0509934, -31.4673)
+
+[node name="Shakable Object15" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -15.7851, 0.0509934, -32.0891)
+
+[node name="Shakable Object16" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -23.5565, 0.0509934, -22.6855)
+
+[node name="Shakable Object17" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -37.9039, 0.0509934, -25.29)
+
+[node name="Shakable Object18" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -29.6616, 0.0509934, -15.173)
+
+[node name="Shakable Object19" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -25.9238, 0.0509934, -7.05372)
+
+[node name="Shakable Object20" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -28.8552, 0.0509934, -9.99734)
+
+[node name="Shakable Object21" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -33.9798, 0.0509934, -0.645945)
+
+[node name="Shakable Object22" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -34.4409, 0.0509934, 1.28783)
+
+[node name="Shakable Object23" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -30.4292, 0.0509934, 0.0760865)
+
+[node name="Shakable Object24" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -32.986, 0.0509934, 20.97)
+
+[node name="Shakable Object25" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -34.93, 0.0509934, 30.1422)
+
+[node name="Shakable Object26" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -37.3339, 0.0509934, 40.0175)
+
+[node name="Shakable Object27" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -38.9355, 0.0509934, 34.992)
+
+[node name="Shakable Object28" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -32.6895, 0.0509934, 47.2394)
+
+[node name="Shakable Object29" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -35.9129, 0.0509934, 48.6874)
+
+[node name="Shakable Object30" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -26.4772, 0.0509934, 43.6633)
+
+[node name="Shakable Object31" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -18.0823, 0.0509934, 37.045)
+
+[node name="Shakable Object32" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -7.44775, 0.183546, 43.6371)
+
+[node name="Shakable Object33" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 5.37894, 0.183546, 29.5881)
+
+[node name="Shakable Object34" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 3.94706, 0.183546, 28.1295)
+
+[node name="Shakable Object35" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 7.97142, 0.183546, 28.6222)
+
+[node name="Shakable Object36" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 6.49941, 0.183546, 23.9306)
+
+[node name="Shakable Object37" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 18.8207, 0.183546, 32.2936)
+
+[node name="Shakable Object38" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 24.8119, 0.183546, 23.7453)
+
+[node name="Shakable Object39" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -141.166, -54.2223, -139.568)
+
+[node name="Shakable Object40" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -136.569, -54.6425, -132.652)
+
+[node name="Shakable Object41" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -129.621, -54.3259, -132.352)
+
+[node name="Shakable Object42" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -154.267, -54.8066, -135.56)
+
+[node name="Shakable Object43" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -156.337, -54.8066, -141.671)
+
+[node name="Shakable Object44" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -135.187, -54.3531, -154.928)
+
+[node name="Shakable Object45" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -129.784, -53.8932, -148.866)
+
+[node name="Shakable Object46" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -119.326, -53.8187, -138.416)
+
+[node name="Shakable Object47" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -119.326, -55.0335, -169.478)
+
+[node name="Shakable Object10" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -8.4622, 0.0509934, -24.2948)
+
+[node name="Shakable Object11" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, -6.54688, 0.0509934, -27.0068)
+
+[node name="Shakable Object12" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 7.95275, 0.0509934, -25.7764)
+
+[node name="Shakable Object13" parent="." instance=ExtResource("9_yy5xe")]
+transform = Transform3D(0.956897, 0, 0, 0, 0.956897, 0, 0, 0, 0.956897, 9.24676, 0.0509934, -27.6765)
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -5189,6 +5424,18 @@ shape = SubResource("ConcavePolygonShape3D_axdxp")
 transform = Transform3D(1.5674, 0, 0, 0, 1, 0, 0, 0, 1.74778, -21.634, -57.0117, 1.4598)
 visible = false
 
+[node name="Kill Plane5" parent="Death Planes" instance=ExtResource("48_fy3d0")]
+transform = Transform3D(0.0361083, 0, 0, 0, 1, 0, 0, 0, 0.323287, -87.3961, -44.6415, -109.101)
+visible = false
+
+[node name="Kill Plane6" parent="Death Planes" instance=ExtResource("48_fy3d0")]
+transform = Transform3D(0.19784, 0, 0, 0, 1, 0, 0, 0, 0.0870481, -138.901, -49.0245, -94.9559)
+visible = false
+
+[node name="Kill Plane7" parent="Death Planes" instance=ExtResource("48_fy3d0")]
+transform = Transform3D(0.19784, 0, 0, 0, 1, 0, 0, 0, 0.0870481, -217.387, -49.0245, -175.103)
+visible = false
+
 [node name="Kill Plane2" parent="Death Planes" instance=ExtResource("48_fy3d0")]
 transform = Transform3D(0.12699, 0, 0, 0, 1, 0, 0, 0, 0.206726, 84.6852, 7.96272, 30.4541)
 visible = false
@@ -5580,3 +5827,12 @@ mesh = ExtResource("73_rwxkp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MountainSlope04/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_sg5mc")
+
+[editable path="Item Example4"]
+[editable path="Item Example7"]
+[editable path="Item Example8"]
+[editable path="Item Example2"]
+[editable path="Item Example9"]
+[editable path="Item Example3"]
+[editable path="Item Example5"]
+[editable path="Item Example6"]
