@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4gtewd4xlp5k"
-path.s3tc="res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png-3cc21f73bd81edb04aada528b34b8e43.s3tc.ctex"
+uid="uid://dcr8kch0ad0e"
+path.s3tc="res://.godot/imported/Stone Texture.png-f0e9f8f0e3b19f3595f78f2f550e44eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
-}
 
 [deps]
 
-source_file="res://Assets/Shaders Materials Textures/Quest-Nyan Mark Resources/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png"
-dest_files=["res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png-3cc21f73bd81edb04aada528b34b8e43.s3tc.ctex"]
+source_file="res://Assets/Shaders/Stone Texture.png"
+dest_files=["res://.godot/imported/Stone Texture.png-f0e9f8f0e3b19f3595f78f2f550e44eb.s3tc.ctex"]
 
 [params]
 
