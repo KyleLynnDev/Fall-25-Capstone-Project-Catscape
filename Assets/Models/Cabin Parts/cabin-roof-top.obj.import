@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf2mwnbhahg24"
+path="res://.godot/imported/cabin-roof-top.obj-36f59e0c742a5e8c7287d448e0aeae0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cabin-roof-top.obj-36f59e0c742a5e8c7287d448e0aeae0c.mesh"]
+
+source_file="res://Assets/Models/Cabin Parts/cabin-roof-top.obj"
+dest_files=["res://.godot/imported/cabin-roof-top.obj-36f59e0c742a5e8c7287d448e0aeae0c.mesh", "res://.godot/imported/cabin-roof-top.obj-36f59e0c742a5e8c7287d448e0aeae0c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
