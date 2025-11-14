@@ -1,5 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu0baqjmwddih"]
 
+[gd_scene load_steps=10 format=3 uid="uid://dyntnlpvlftqt"]
+
+[ext_resource type="PackedScene" path="res://World/catscape_questnyan_mark_v_1.tscn" id="6_85dfj"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="2_iycnp"]
 [ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
 [ext_resource type="PackedScene" uid="uid://c62vf21wlw7gh" path="res://World/skybox_hub.tscn" id="3_yx075"]
@@ -27,6 +29,7 @@ glow_enabled = true
 [node name="Main" type="Node3D"]
 
 [node name="Player_New" parent="." instance=ExtResource("2_iycnp")]
+
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 12.5, 0)
 
 [node name="Enviroment" type="Node3D" parent="."]

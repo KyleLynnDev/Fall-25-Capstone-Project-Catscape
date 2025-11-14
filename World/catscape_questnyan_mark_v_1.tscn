@@ -1,5 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvdihqlbspw0m"]
-
+[gd_scene load_steps=3 format=3 uid="uid://bvdihqlbspw0m"]
 [ext_resource type="PackedScene" uid="uid://nnmmv2c16emh" path="res://Assets/Models/catscape_questnyan_mark_v1.glb" id="1_wpl0n"]
 [ext_resource type="Shader" uid="uid://dpk3ek84st751" path="res://Assets/Shaders Materials Textures/Quest-Nyan Mark Resources/quest-nyan_mark.gdshader" id="2_bjggb"]
 [ext_resource type="Texture2D" uid="uid://kaqvw0hkla7p" path="res://Assets/Shaders Materials Textures/Quest-Nyan Mark Resources/catscape_quest-nyan_mark_noise_texture.tres" id="3_sbetd"]

@@ -15,7 +15,9 @@ emission_sphere_radius = 0.25
 gravity = Vector3(0, 1, 0)
 radial_accel_min = -2.23517e-06
 radial_accel_max = -2.23517e-06
-scale_min = 0.5
+scale_min = 0.25
+scale_max = 0.5
+
 scale_curve = SubResource("CurveTexture_x81r8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_camqw"]

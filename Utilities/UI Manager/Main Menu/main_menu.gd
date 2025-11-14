@@ -1,7 +1,9 @@
 extends Node3D
 
 const MenuParticlesScene := preload("res://Assets/MenuParticles.tscn")
+
 const OptionsMenuScene := preload("res://Utilities/Settings/options_menu.tscn")
+
 
 @onready var start_game: Button = $"CanvasLayer/VBoxContainer/Start Game"
 @onready var transition = $CanvasLayer/SceneTransitionRect
@@ -18,6 +20,7 @@ func _ready() -> void:
 	menu_particles.position = get_viewport().get_visible_rect().size / 2.0
 	menu_particles.get_node("CPUParticles2D").emitting = true
 	SoundManager.play_ambient(preload("res://Sounds/Mountain_Peak_Amb.wav"))
+
 
 
 func _process(delta):
