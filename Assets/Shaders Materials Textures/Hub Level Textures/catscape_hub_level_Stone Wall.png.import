@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4go8gmm3tm2a"
-path.s3tc="res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Nose Texture.png-59e9392c5552513752e1b573823fbc2e.s3tc.ctex"
+uid="uid://bsvb7546tpgfb"
+path.s3tc="res://.godot/imported/catscape_hub_level_Stone Wall.png-927693ef42960904a3e732b95d31b416.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b5cfa9d6c8febd618f91ac2843d50a1c"
+"md5": "ac759c998003f92372f4fa448655daeb"
 }
 
 [deps]
 
-source_file="res://Assets/Shaders Materials Textures/Quest-Nyan Mark Resources/catscape_quest-nyan_mark_Quest-Nyan Mark Nose Texture.png"
-dest_files=["res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Nose Texture.png-59e9392c5552513752e1b573823fbc2e.s3tc.ctex"]
+source_file="res://Assets/Shaders Materials Textures/Hub Level Textures/catscape_hub_level_Stone Wall.png"
+dest_files=["res://.godot/imported/catscape_hub_level_Stone Wall.png-927693ef42960904a3e732b95d31b416.s3tc.ctex"]
 
 [params]
 

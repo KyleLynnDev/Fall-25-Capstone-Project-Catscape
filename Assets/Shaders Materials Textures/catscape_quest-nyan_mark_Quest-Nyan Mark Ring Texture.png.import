@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tnwu2ut8x53e"
-path.s3tc="res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png-3d091cd4f59549bdb14779dfeafe4c26.s3tc.ctex"
+uid="uid://r2n5twly2q6v"
+path.s3tc="res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png-ff10aa6ef5934ba4e25b9e796f95a5f0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png"
-dest_files=["res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ball Texture.png-3d091cd4f59549bdb14779dfeafe4c26.s3tc.ctex"]
+source_file="res://Assets/Shaders Materials Textures/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png"
+dest_files=["res://.godot/imported/catscape_quest-nyan_mark_Quest-Nyan Mark Ring Texture.png-ff10aa6ef5934ba4e25b9e796f95a5f0.s3tc.ctex"]
 
 [params]
 
