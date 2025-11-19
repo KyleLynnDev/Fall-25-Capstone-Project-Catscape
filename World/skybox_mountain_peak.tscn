@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwrawcavyixem"]
+
+[ext_resource type="Texture2D" uid="uid://bfmoijieywk53" path="res://Assets/Shaders Materials Textures/cave background.png" id="1_3yjmn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nomve"]
+albedo_texture = ExtResource("1_3yjmn")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2w823"]
+flip_faces = true
+
+[node name="Skybox Mountain Peak" type="Node3D"]
+
+[node name="Skybox" type="MeshInstance3D" parent="."]
+transform = Transform3D(448, 0, 0, 0, 448, 0, 0, 0, 448, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_nomve")
+mesh = SubResource("SphereMesh_2w823")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0363995, -0.999337, 0, 0.999337, 0.0363995, 0, 0, 0)
