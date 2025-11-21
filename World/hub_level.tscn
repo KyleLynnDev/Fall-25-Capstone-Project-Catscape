@@ -22,8 +22,7 @@ glow_enabled = true
 [node name="Main" type="Node3D"]
 
 [node name="Player_New" parent="." instance=ExtResource("2_3suut")]
-
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.247, 1.00001, -115.854)
 
 [node name="Enviroment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
