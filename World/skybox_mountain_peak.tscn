@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwrawcavyixem"]
 
-[ext_resource type="Texture2D" uid="uid://bfmoijieywk53" path="res://Assets/Shaders Materials Textures/cave background.png" id="1_3yjmn"]
+[ext_resource type="Texture2D" uid="uid://bfmoijieywk53" path="res://Assets/Shaders/cave background.png" id="1_3yjmn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nomve"]
 albedo_texture = ExtResource("1_3yjmn")
