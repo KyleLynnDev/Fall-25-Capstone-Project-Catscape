@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=537 format=3 uid="uid://cbvjid0cuf4nh"]
+=======
+[gd_scene load_steps=535 format=3 uid="uid://cbvjid0cuf4nh"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=535 format=3 uid="uid://cbvjid0cuf4nh"]
 >>>>>>> Stashed changes
@@ -82,7 +86,11 @@
 [ext_resource type="Texture2D" uid="uid://d00uxfxk5ffh3" path="res://Entities/NPCs/Sir Frog/Sir Frog Sprite.png" id="59_fq8tp"]
 [ext_resource type="PackedScene" uid="uid://bqksudore6gkp" path="res://Entities/Decorations/Crystal/crystal_mesh.tscn" id="60_s6wxr"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cn8a3fbx3xhmo" path="res://Assets/Models/CrystalHouse_02.png" id="72_fvgik"]
+=======
+[ext_resource type="Texture2D" uid="uid://cpu36vq870ep8" path="res://Assets/Models/CrystalHouse_02.png" id="72_fvgik"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="Texture2D" uid="uid://cpu36vq870ep8" path="res://Assets/Models/CrystalHouse_02.png" id="72_fvgik"]
 >>>>>>> Stashed changes
@@ -696,12 +704,15 @@ albedo_texture = ExtResource("5_083vy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcfym"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 albedo_texture = ExtResource("22_6b7mf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu372"]
 albedo_texture = ExtResource("22_6b7mf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcdvc"]
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 albedo_texture = ExtResource("5_083vy")
@@ -713,13 +724,19 @@ albedo_texture = ExtResource("5_083vy")
 albedo_texture = ExtResource("5_083vy")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu372"]
 albedo_texture = ExtResource("5_083vy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcdvc"]
 albedo_texture = ExtResource("5_083vy")
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjn47"]
 albedo_texture = ExtResource("5_083vy")
@@ -731,6 +748,7 @@ albedo_texture = ExtResource("5_083vy")
 albedo_texture = ExtResource("5_083vy")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmnpc"]
 albedo_texture = ExtResource("5_083vy")
 
@@ -741,6 +759,12 @@ albedo_texture = ExtResource("5_083vy")
 albedo_texture = ExtResource("5_083vy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wcfu"]
+=======
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qq7o"]
+albedo_texture = ExtResource("5_083vy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmnpc"]
+>>>>>>> Stashed changes
 =======
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qq7o"]
 albedo_texture = ExtResource("5_083vy")
@@ -4447,7 +4471,11 @@ size = Vector3(4.11335, 11.451, 0.0675049)
 [node name="CSGBox3D33" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -83.7607, 23.5528, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_kcdvc")
+=======
+material_override = SubResource("StandardMaterial3D_mcfym")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_mcfym")
 >>>>>>> Stashed changes
@@ -4469,7 +4497,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D36" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -78.9261, 19.3401, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_jjn47")
+=======
+material_override = SubResource("StandardMaterial3D_gu372")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_gu372")
 >>>>>>> Stashed changes
@@ -4479,7 +4511,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D27" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -82.2516, 22.4004, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_moi5h")
+=======
+material_override = SubResource("StandardMaterial3D_kcdvc")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_kcdvc")
 >>>>>>> Stashed changes
@@ -4489,7 +4525,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D28" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -80.0249, 20.16, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_h8uci")
+=======
+material_override = SubResource("StandardMaterial3D_jjn47")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_jjn47")
 >>>>>>> Stashed changes
@@ -4499,7 +4539,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D29" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -77.7481, 18.2458, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_cmnpc")
+=======
+material_override = SubResource("StandardMaterial3D_moi5h")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_moi5h")
 >>>>>>> Stashed changes
@@ -4509,7 +4553,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D30" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -76.0057, 17.1425, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_kbm6d")
+=======
+material_override = SubResource("StandardMaterial3D_h8uci")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_h8uci")
 >>>>>>> Stashed changes
@@ -4525,7 +4573,11 @@ size = Vector3(1.46008, 14.3964, 7.94458)
 [node name="CSGBox3D32" type="CSGBox3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 transform = Transform3D(5.07761, 0, 0, 0, 1, 0, 0, 0, 2.4792, -72.3304, 14.675, 11.0962)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 material_override = SubResource("StandardMaterial3D_4wcfu")
+=======
+material_override = SubResource("StandardMaterial3D_cmnpc")
+>>>>>>> Stashed changes
 =======
 material_override = SubResource("StandardMaterial3D_cmnpc")
 >>>>>>> Stashed changes
@@ -4554,7 +4606,11 @@ shape = SubResource("ConcavePolygonShape3D_cjkp1")
 
 [node name="CrystalPillar3" type="MeshInstance3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.3585, 21.3598)
+=======
+transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.296, 21.3598)
+>>>>>>> Stashed changes
 =======
 transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.296, 21.3598)
 >>>>>>> Stashed changes
@@ -4568,7 +4624,11 @@ shape = SubResource("ConcavePolygonShape3D_f8xp1")
 
 [node name="CrystalPillar4" type="MeshInstance3D" parent="Mountain_Peak_Level/Ancient Crystal Palace/Stairs"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.3585, 0.620825)
+=======
+transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.296, 0.620825)
+>>>>>>> Stashed changes
 =======
 transform = Transform3D(1, 0, 0, 0, 0.661664, 0, 0, 0, 1, -86.5911, 18.296, 0.620825)
 >>>>>>> Stashed changes
