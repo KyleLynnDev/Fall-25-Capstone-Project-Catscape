@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbb55vei4uoya"
+path="res://.godot/imported/Crystal_House.obj-7732f306cfe037881f4e0d1cc068243f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Crystal_House.obj-7732f306cfe037881f4e0d1cc068243f.mesh"]
+
+source_file="res://Assets/Models/Crystal_House.obj"
+dest_files=["res://.godot/imported/Crystal_House.obj-7732f306cfe037881f4e0d1cc068243f.mesh", "res://.godot/imported/Crystal_House.obj-7732f306cfe037881f4e0d1cc068243f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
