@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c62vf21wlw7gh"]
+[gd_scene load_steps=7 format=3 uid="uid://c62vf21wlw7gh"]
 
 [ext_resource type="Texture2D" uid="uid://c5fp20ijrt1eh" path="res://Assets/Shaders Materials Textures/test_skybox_texture.png" id="1_mio7s"]
 [ext_resource type="Shader" uid="uid://dbkxlmwayunru" path="res://Assets/Shaders Materials Textures/Skybox Shaders/skybox_hub.gdshader" id="2_cholw"]
@@ -6,7 +6,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cholw"]
 albedo_texture = ExtResource("1_mio7s")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w823"]
+albedo_texture = ExtResource("1_mio7s")
+
 [sub_resource type="SphereMesh" id="SphereMesh_2w823"]
+material = SubResource("StandardMaterial3D_2w823")
 flip_faces = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2w823"]

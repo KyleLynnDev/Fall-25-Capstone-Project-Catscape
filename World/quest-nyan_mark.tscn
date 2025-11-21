@@ -62,7 +62,7 @@ node_connections = [&"Ball & Nose", 0, &"Ball Rotation", &"Ball & Nose", 1, &"No
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189142, -2.38419e-07, 0.0122356)
 
 [node name="Quest-Nyan Mark" parent="." index="0"]
-transform = Transform3D(-0.953276, 0, -0.302101, 0, 1, 0, 0.302101, 0, -0.953276, -0.0189123, 2.38419e-07, 0.0122328)
+transform = Transform3D(0.665432, 0, 0.746459, 0, 1, 0, -0.746459, 0, 0.665432, -0.0189123, 2.38419e-07, 0.0122328)
 surface_material_override/0 = SubResource("ShaderMaterial_wyike")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Quest-Nyan Mark" index="0"]
@@ -73,15 +73,15 @@ shape = SubResource("CapsuleShape3D_uyf8u")
 debug_fill = false
 
 [node name="Quest-Nyan Mark Ring" parent="." index="1"]
-transform = Transform3D(-0.953276, 0, -0.302101, 0, 1, 0, 0.302101, 0, -0.953276, 0, 0, 0)
+transform = Transform3D(0.665432, 0, 0.746459, 0, 1, 0, -0.746459, 0, 0.665432, 0, 0, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_wyike")
 
 [node name="Quest-Nyan Mark Nose" parent="." index="2"]
-transform = Transform3D(-0.953276, 0, -0.302101, 0, 1, 0, 0.302101, 0, -0.953276, 0, 0, 0)
+transform = Transform3D(0.665432, 0, 0.746459, 0, 1, 0, -0.746459, 0, 0.665432, 0, 0, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_wyike")
 
 [node name="Quest-Nyan Mark Ball" parent="." index="3"]
-transform = Transform3D(-0.953276, 0, -0.302101, 0, 1, 0, 0.302101, 0, -0.953276, 0, 0, 0)
+transform = Transform3D(0.665432, 0, 0.746459, 0, 1, 0, -0.746459, 0, 0.665432, 0, 0, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_wyike")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="5"]

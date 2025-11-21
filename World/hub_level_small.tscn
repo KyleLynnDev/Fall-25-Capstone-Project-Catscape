@@ -1,12 +1,14 @@
-[gd_scene load_steps=43 format=3 uid="uid://bu0baqjmwddih"]
+[gd_scene load_steps=45 format=3 uid="uid://bu0baqjmwddih"]
 
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="2_iycnp"]
 [ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
 [ext_resource type="PackedScene" uid="uid://c62vf21wlw7gh" path="res://World/skybox_hub.tscn" id="3_yx075"]
 [ext_resource type="PackedScene" uid="uid://cuythxy4ytuw" path="res://Assets/Models/catscape_hub_level.glb" id="4_pblp5"]
 [ext_resource type="PackedScene" uid="uid://rmyxrim7joiy" path="res://World/quest-nyan_mark.tscn" id="5_85dfj"]
+[ext_resource type="PackedScene" uid="uid://burne1poju1nj" path="res://World/cat_thedral.tscn" id="5_egncc"]
 [ext_resource type="PackedScene" uid="uid://bnsico0crb8dj" path="res://World/catscape_tree.tscn" id="5_pblp5"]
 [ext_resource type="PackedScene" uid="uid://t2h6tpsyorf" path="res://World/cat's_eye_marble_ice_&_snow.tscn" id="7_pblp5"]
+[ext_resource type="Material" uid="uid://cin8tpha30i4c" path="res://Assets/Shaders Materials Textures/Grass Texture.tres" id="8_f4iyw"]
 [ext_resource type="PackedScene" uid="uid://b54uw1ssajkro" path="res://Utilities/Utility Scripts and objects/shakable_object.tscn" id="8_lvmk8"]
 [ext_resource type="PackedScene" uid="uid://b0fpy62s5mnj" path="res://Utilities/Utility Scripts and objects/checkpoint.tscn" id="9_tuy5h"]
 
@@ -27,7 +29,6 @@ background_mode = 2
 background_color = Color(0.383048, 0.923878, 0.700924, 1)
 sky = SubResource("Sky_bo1nx")
 ambient_light_color = Color(1.73271e-06, 0.634048, 0.377848, 1)
-ambient_light_energy = 0.0
 glow_enabled = true
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lvmk8"]
@@ -123,7 +124,7 @@ data = PackedVector3Array(0.9688, 0.25, 0.0313, 1, 0.2891, 0, 1, 0.2891, 0.0313,
 [node name="Main" type="Node3D"]
 
 [node name="Player_New" parent="." instance=ExtResource("2_iycnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 12.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 12.5, 0)
 
 [node name="Enviroment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
@@ -135,10 +136,12 @@ environment = SubResource("Environment_8gbba")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -36, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Enviroment"]
-transform = Transform3D(-0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, 0.612372, -0.612372, 0, -36, 0)
-light_color = Color(0.878431, 1, 0.878431, 1)
-shadow_enabled = true
-sky_mode = 2
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -36, 0)
+light_color = Color(0.88, 1, 0.96, 1)
+light_energy = 0.9
+light_angular_distance = 60.0
+shadow_normal_bias = 0.0
+directional_shadow_mode = 0
 
 [node name="Pier Combiner" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 5, 101)
@@ -783,12 +786,11 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
 
 [node name="Cathedral Combiner" type="CSGCombiner3D" parent="catscape_hub_level/Chunk 1_014/Buildings"]
-transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.421875, 0.1875, 3.68815e-08)
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.421875, -2.21875, 3.68815e-08)
 use_collision = true
 
 [node name="Level 1" type="CSGBox3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner"]
 size = Vector3(24, 12, 24)
-metadata/_edit_lock_ = true
 
 [node name="Room Hollow" type="CSGBox3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
 operation = 2
@@ -799,31 +801,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -3, 0)
 operation = 2
 size = Vector3(1, 4, 4)
 metadata/_edit_lock_ = true
-
-[node name="Pillar 1" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3, 6)
-radius = 0.25
-height = 4.0
-
-[node name="Pillar 2" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, -3, -6)
-radius = 0.25
-height = 4.0
-
-[node name="Pillar 3" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, 4)
-radius = 0.25
-height = 4.0
-
-[node name="Pillar 4" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -3, -4)
-radius = 0.25
-height = 4.0
-
-[node name="Pillar 5" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -3, 0)
-radius = 0.25
-height = 4.0
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Buildings/Cathedral Combiner/Level 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 12)
@@ -919,6 +896,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 operation = 2
 size = Vector3(15.9883, 8, 15.967)
 
+[node name="Cat-Thedral" parent="catscape_hub_level/Chunk 1_014/Buildings" instance=ExtResource("5_egncc")]
+transform = Transform3D(-0.02, 0, 3.01992e-09, 0, 0.02, 0, -3.01992e-09, 0, -0.02, 0.35, 0, 0)
+
 [node name="Decorations" type="Node3D" parent="catscape_hub_level/Chunk 1_014" index="2"]
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
 
@@ -927,6 +907,7 @@ transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
 transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, -0.375, -0.015625, -3.27836e-08)
+visible = false
 inner_radius = 16.0
 outer_radius = 18.0
 
@@ -950,11 +931,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0243, 0, 0)
 operation = 2
 size = Vector3(6, 3, 29)
 
+[node name="Pillar 1" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.515625, 0.09375, -0.1875)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 2" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.515625, 0.09375, 0.1875)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 3" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.640625, 0.09375, -0.125)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 4" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.640625, 0.09375, 0.125)
+radius = 0.25
+height = 4.0
+
+[node name="Pillar 5" type="CSGCylinder3D" parent="catscape_hub_level/Chunk 1_014/Decorations"]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.734375, 0.09375, 6.42011e-08)
+radius = 0.25
+height = 4.0
+
 [node name="NPCs" type="Node3D" parent="catscape_hub_level/Chunk 1_014" index="3"]
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
 
 [node name="catscape_quest-nyan_mark" parent="catscape_hub_level/Chunk 1_014/NPCs" instance=ExtResource("5_85dfj")]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.375, 0, 2.98023e-08)
+
+[node name="Chunk 1_010" parent="catscape_hub_level" index="1"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_010" index="0"]
 
@@ -979,9 +988,11 @@ shape = SubResource("ConcavePolygonShape3D_egncc")
 [node name="NPCs" type="Node3D" parent="catscape_hub_level/Chunk 1_018" index="3"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_017" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_017/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_f4iyw")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_009" index="0"]
 
@@ -1586,10 +1597,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, -4)
 size = Vector3(3, 2, 4)
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_022" parent="catscape_hub_level" index="9"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_022" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_022/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bjf6v")
+metadata/_edit_lock_ = true
 
 [node name="Decorations" type="Node3D" parent="catscape_hub_level/Chunk 1_022/StaticBody3D/CollisionShape3D"]
 
@@ -1608,12 +1624,18 @@ transform = Transform3D(-0.00546573, 0, -0.0055822, 0, 0.0078125, 0, 0.0055822, 
 [node name="catscape_tree3" parent="catscape_hub_level/Chunk 1_022/StaticBody3D/CollisionShape3D/Decorations" instance=ExtResource("5_pblp5")]
 transform = Transform3D(0.0063819, 0, -0.00450627, 0, 0.0078125, 0, 0.00450627, 0, 0.0063819, -0.904958, -2.98023e-08, 0.780348)
 
+[node name="Chunk 1_006" parent="catscape_hub_level" index="10"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_006" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_006/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qcfja")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_007" parent="catscape_hub_level" index="11"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_007" index="0"]
 metadata/_edit_lock_ = true
@@ -1651,6 +1673,15 @@ transform = Transform3D(0.00773538, 0, -0.00109499, 0, 0.0078125, 0, 0.00109499,
 [node name="Shakable Object" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
 transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, -0.010858, 0.00152326, -0.379378)
 
+[node name="Shakable Object5" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.0794016, 0.00152326, 0.03752)
+
+[node name="Shakable Object6" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.619949, 0.00152326, -0.184246)
+
+[node name="Shakable Object7" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
+transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.455088, 0.00152326, 0.0215415)
+
 [node name="Shakable Object2" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
 transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, 0.16719, 0.00152326, -0.491736)
 
@@ -1660,6 +1691,9 @@ transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0
 [node name="Shakable Object4" parent="catscape_hub_level/Chunk 1_007/Decorations" instance=ExtResource("8_lvmk8")]
 transform = Transform3D(-0.03125, 0, 2.73196e-09, 0, 0.03125, 0, -2.73196e-09, 0, -0.03125, -0.0637282, 0.00152326, -0.80092)
 
+[node name="Chunk 1_003" parent="catscape_hub_level" index="12"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_003" index="0"]
 metadata/_edit_lock_ = true
 
@@ -1667,12 +1701,18 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_vokab")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_002" parent="catscape_hub_level" index="13"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_002" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_002/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_lg2fk")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_001" parent="catscape_hub_level" index="14"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_001" index="0"]
 metadata/_edit_lock_ = true
@@ -1683,6 +1723,9 @@ metadata/_edit_lock_ = true
 
 [node name="Decorations" type="Node3D" parent="catscape_hub_level/Chunk 1_001" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.76837e-07)
+
+[node name="Chunk 1_005" parent="catscape_hub_level" index="15"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_005" index="0"]
 metadata/_edit_lock_ = true
@@ -1697,6 +1740,9 @@ metadata/_edit_lock_ = true
 
 [node name="NPCs" type="Node3D" parent="catscape_hub_level/Chunk 1_005" index="3"]
 
+[node name="Chunk 1_004" parent="catscape_hub_level" index="16"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_004" index="0"]
 metadata/_edit_lock_ = true
 
@@ -1704,12 +1750,18 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_p3304")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_000" parent="catscape_hub_level" index="17"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_000" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_000/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1q4ye")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_023" parent="catscape_hub_level" index="18"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_023" index="0"]
 metadata/_edit_lock_ = true
@@ -1723,6 +1775,9 @@ metadata/_edit_lock_ = true
 [node name="NPCs" type="Node3D" parent="catscape_hub_level/Chunk 1_023" index="2"]
 
 [node name="Buildings" type="Node3D" parent="catscape_hub_level/Chunk 1_023" index="3"]
+
+[node name="Chunk 1_021" parent="catscape_hub_level" index="19"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_021" index="0"]
 metadata/_edit_lock_ = true
@@ -1752,12 +1807,18 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_7wlvc")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_020" parent="catscape_hub_level" index="23"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_020" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_020/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_80y6g")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_025" parent="catscape_hub_level" index="24"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_025" index="0"]
 metadata/_edit_lock_ = true
@@ -1766,12 +1827,18 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_cgjsv")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_027" parent="catscape_hub_level" index="25"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_027" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_027/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iy8h5")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_026" parent="catscape_hub_level" index="26"]
+surface_material_override/2 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_026" index="0"]
 metadata/_edit_lock_ = true
@@ -1780,6 +1847,9 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_luixf")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_028" parent="catscape_hub_level" index="27"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_028" index="0"]
 metadata/_edit_lock_ = true
 
@@ -1787,12 +1857,18 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_v7r6f")
 metadata/_edit_lock_ = true
 
+[node name="Chunk 1_029" parent="catscape_hub_level" index="28"]
+surface_material_override/2 = ExtResource("8_f4iyw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_029" index="0"]
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="catscape_hub_level/Chunk 1_029/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2q4lj")
 metadata/_edit_lock_ = true
+
+[node name="Chunk 1_024" parent="catscape_hub_level" index="29"]
+surface_material_override/1 = ExtResource("8_f4iyw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="catscape_hub_level/Chunk 1_024" index="0"]
 metadata/_edit_lock_ = true
