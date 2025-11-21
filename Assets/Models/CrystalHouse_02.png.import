@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://cn8a3fbx3xhmo"
+=======
+uid="uid://cpu36vq870ep8"
+>>>>>>> Stashed changes
 path.s3tc="res://.godot/imported/CrystalHouse_02.png-cc2e9e73bf7d0f2f47ab5b9ebc3a2f08.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
