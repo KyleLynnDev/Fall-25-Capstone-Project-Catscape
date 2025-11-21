@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ds77bdtrhthe" path="res://Entities/Terrain/StartingChunk_Chunk 42 texture.png" id="15_1h5od"]
 [ext_resource type="Texture2D" uid="uid://cmc3iq1oj3ev" path="res://Entities/Terrain/StartingChunk_Chunk 43 texture.png" id="16_bk5w4"]
 [ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="17_ecmfg"]
-[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders/bg_debug_sky.png" id="18_plib1"]
+[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="18_plib1"]
 [ext_resource type="PackedScene" uid="uid://bjvfqotjiincf" path="res://Assets/Models/cave_entrance.blend" id="19_apdi7"]
 [ext_resource type="Script" uid="uid://b1db65e75h03m" path="res://Utilities/Utility Scripts and objects/ChunkOcclusion.gd" id="19_x3gdw"]
 [ext_resource type="PackedScene" uid="uid://csuuravr2ftop" path="res://Assets/Models/huge_stone.blend" id="20_x3gdw"]
