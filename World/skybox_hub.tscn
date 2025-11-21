@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c62vf21wlw7gh"]
+[gd_scene load_steps=5 format=3 uid="uid://c62vf21wlw7gh"]
 
 [ext_resource type="Texture2D" uid="uid://c5fp20ijrt1eh" path="res://Assets/Shaders Materials Textures/test_skybox_texture.png" id="1_mio7s"]
 
