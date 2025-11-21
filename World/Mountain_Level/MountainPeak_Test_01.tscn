@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_u563e"]
 [ext_resource type="PackedScene" uid="uid://dwrawcavyixem" path="res://World/skybox_mountain_peak.tscn" id="2_07khm"]
 [ext_resource type="Shader" uid="uid://dgyst4bqiwp5i" path="res://Assets/Shaders Materials Textures/skybox.gdshader" id="2_axdxp"]
-[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders Materials Textures/bg_debug_sky.png" id="3_07khm"]
+[ext_resource type="Texture2D" uid="uid://272d0k3s7tgc" path="res://Assets/Shaders/bg_debug_sky.png" id="3_07khm"]
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="4_tkye4"]
 [ext_resource type="Texture2D" uid="uid://c72atlruelk6m" path="res://Assets/Models/Snow_Terrain_01.png" id="5_083vy"]
 [ext_resource type="Texture2D" uid="uid://ykcyo7t3u601" path="res://abble.png" id="6_31om7"]
