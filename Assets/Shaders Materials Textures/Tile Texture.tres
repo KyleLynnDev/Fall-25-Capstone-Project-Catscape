@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://5kxps3jfmves"]
+
+[ext_resource type="Texture2D" uid="uid://04fqijtckg8t" path="res://Assets/Shaders Materials Textures/Hub Level Textures/catscape_tile_floor_texture.png" id="1_t7gae"]
+
+[resource]
+albedo_texture = ExtResource("1_t7gae")
