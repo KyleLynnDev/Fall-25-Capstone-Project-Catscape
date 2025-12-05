@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cin8tpha30i4c"]
 
-[ext_resource type="Texture2D" uid="uid://bm7qoy6mmiuc6" path="res://Assets/Shaders Materials Textures/Hub Level Textures/catscape_hub_level_Grass Texture.png" id="1_afuvg"]
+[ext_resource type="Texture2D" uid="uid://cmdpv8447dxj6" path="res://Assets/Shaders Materials Textures/Hub Level Textures/catscape_hub_level_Grass Texture.png" id="1_afuvg"]
 
 [resource]
 albedo_texture = ExtResource("1_afuvg")

@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://burne1poju1nj"]
+[gd_scene load_steps=9 format=3 uid="uid://burne1poju1nj"]
 
-[ext_resource type="PackedScene" uid="uid://d3vc0ieq00mpt" path="res://Assets/Models/Catscape Cat-Thedral.glb" id="1_mbhwd"]
+[ext_resource type="PackedScene" uid="uid://d3vc0ieq00mpt" path="res://Assets/Models/Cat's Cape Models/Catscape Cat-Thedral.glb" id="1_mbhwd"]
+[ext_resource type="Material" uid="uid://b8q5v5qh7bt6d" path="res://Assets/Shaders Materials Textures/Marble Texture.tres" id="2_rygqh"]
+[ext_resource type="Material" uid="uid://dw5eislkaehs3" path="res://Assets/Shaders Materials Textures/Roof Texture.tres" id="3_u1nfa"]
+[ext_resource type="Material" uid="uid://5kxps3jfmves" path="res://Assets/Shaders Materials Textures/Tile Texture.tres" id="4_jm4r3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbhwd"]
 size = Vector3(48, 1, 48)
@@ -19,23 +22,34 @@ data = PackedVector3Array(0, -0.2917, -1, 1, 0.2917, -1, 0, 0.6249, -1, 0, -0.29
 
 [node name="Catscape Cat-Thedral" parent="." instance=ExtResource("1_mbhwd")]
 
+[node name="Cat-Thedral" parent="Catscape Cat-Thedral" index="0"]
+surface_material_override/0 = ExtResource("2_rygqh")
+surface_material_override/1 = ExtResource("3_u1nfa")
+surface_material_override/2 = ExtResource("4_jm4r3")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Catscape Cat-Thedral/Cat-Thedral" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Catscape Cat-Thedral/Cat-Thedral/StaticBody3D"]
 transform = Transform3D(-0.0416667, 0, -6.29149e-09, 0, 0.0833333, 0, 6.29149e-09, 0, -0.0416667, 0, -0.958333, 0)
 shape = SubResource("BoxShape3D_mbhwd")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Catscape Cat-Thedral/Cat-Thedral/StaticBody3D"]
 transform = Transform3D(-0.0416667, 0, -6.29149e-09, 0, 0.0833333, 0, 6.29149e-09, 0, -0.0416667, -1.0625, -0.958333, 1.60433e-07)
 shape = SubResource("BoxShape3D_aqhf4")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Catscape Cat-Thedral/Cat-Thedral/StaticBody3D"]
 transform = Transform3D(-0.0416667, 0, -6.29149e-09, 0, 0.0833333, 0, 6.29149e-09, 0, -0.0416667, -1.08252, -0.958333, 1.63456e-07)
 shape = SubResource("CylinderShape3D_03o3n")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Catscape Cat-Thedral/Cat-Thedral" index="1"]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Catscape Cat-Thedral/Cat-Thedral/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_mbhwd")
+metadata/_edit_lock_ = true
 
 [editable path="Catscape Cat-Thedral"]
