@@ -5415,7 +5415,7 @@ use_collision = true
 size = Vector3(0.0227599, 1.91852, 0.230928)
 
 [node name="Crystal Door5" type="CSGBox3D" parent="Mountain_Peak_Level/Cliffs"]
-transform = Transform3D(6.35111, 0.0718563, -2.9855, -1.08595, 0.789159, -0.0398381, 5.55094, 0.0721711, 3.40808, 9.2203, 0.556112, -17.0505)
+transform = Transform3D(6.35111, 0.0718563, -2.9855, -1.08595, 0.789159, -0.0398381, 5.55094, 0.0721711, 3.40808, 9.22618, 0.556112, -17.0505)
 material_override = SubResource("StandardMaterial3D_fmwqg")
 use_collision = true
 size = Vector3(0.0227599, 1.68994, 0.170259)
