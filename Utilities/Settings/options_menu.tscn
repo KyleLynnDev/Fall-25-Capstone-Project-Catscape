@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bug1f2wbwe01"]
+[gd_scene load_steps=3 format=3 uid="uid://vwggky71jxtu"]
 
-[ext_resource type="Script" uid="uid://b1panhtto4chi" path="res://Utilities/Settings/options_menu.gd" id="1_p6cvg"]
-[ext_resource type="Script" uid="uid://1egqyyqudjx4" path="res://Utilities/Settings/audio_options.gd" id="2_akqjt"]
+[ext_resource type="Script" path="res://Utilities/Settings/options_menu.gd" id="1_p6cvg"]
+[ext_resource type="Script" path="res://Utilities/Settings/audio_options.gd" id="2_akqjt"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3

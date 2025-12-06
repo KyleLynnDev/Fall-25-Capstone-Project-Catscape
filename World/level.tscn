@@ -787,7 +787,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 256)
 
 [node name="Chunk 13" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 64, 0.5, -128)
-visible = false
 mesh = SubResource("ArrayMesh_jt0rt")
 skeleton = NodePath("")
 
@@ -820,7 +819,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 14" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 128, 0.5, -128)
-visible = false
 mesh = SubResource("ArrayMesh_ke56c")
 skeleton = NodePath("")
 
@@ -851,7 +849,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 12" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0.5, -128)
-visible = false
 mesh = SubResource("ArrayMesh_inarl")
 skeleton = NodePath("")
 
@@ -882,7 +879,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 11" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, -64, 0.5, -128)
-visible = false
 mesh = SubResource("ArrayMesh_qilju")
 skeleton = NodePath("")
 
@@ -968,7 +964,6 @@ sprite_preview = ExtResource("9_ay1l2")
 
 [node name="Chunk 24" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 128, 0.5, -192)
-visible = false
 mesh = SubResource("ArrayMesh_cwxyf")
 skeleton = NodePath("")
 
@@ -999,7 +994,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 23" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 64, 0.5, -192)
-visible = false
 mesh = SubResource("ArrayMesh_lcegx")
 skeleton = NodePath("")
 
@@ -1030,7 +1024,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 22" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0.5, -192)
-visible = false
 mesh = SubResource("ArrayMesh_60jei")
 skeleton = NodePath("")
 
@@ -1061,7 +1054,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 21" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, -64, 0.5, -192)
-visible = false
 mesh = SubResource("ArrayMesh_jxpu7")
 skeleton = NodePath("")
 
@@ -1114,7 +1106,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 31" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, -64, 0.5, -256)
-visible = false
 mesh = SubResource("ArrayMesh_0q8px")
 skeleton = NodePath("")
 
@@ -1145,7 +1136,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 32" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0.5, -256)
-visible = false
 mesh = SubResource("ArrayMesh_omoyc")
 skeleton = NodePath("")
 
@@ -1176,7 +1166,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 33" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 64, 0.5, -256)
-visible = false
 mesh = SubResource("ArrayMesh_vsdyx")
 skeleton = NodePath("")
 
@@ -1207,7 +1196,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 34" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 128, 0.5, -256)
-visible = false
 mesh = SubResource("ArrayMesh_j0qgt")
 skeleton = NodePath("")
 
@@ -1238,7 +1226,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 44" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 128, 0.5, -320)
-visible = false
 mesh = SubResource("ArrayMesh_jofly")
 skeleton = NodePath("")
 
@@ -1269,7 +1256,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 41" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, -64, 0.5, -320)
-visible = false
 mesh = SubResource("ArrayMesh_byybh")
 skeleton = NodePath("")
 
@@ -1300,7 +1286,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 42" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0.5, -320)
-visible = false
 mesh = SubResource("ArrayMesh_pv5aw")
 skeleton = NodePath("")
 
@@ -1331,7 +1316,6 @@ cell_size = Vector3(1, 1, 1)
 
 [node name="Chunk 43" type="MeshInstance3D" parent="NavigationRegion3D/StartingChunks"]
 transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 64, 0.5, -320)
-visible = false
 mesh = SubResource("ArrayMesh_5o3hp")
 skeleton = NodePath("")
 
