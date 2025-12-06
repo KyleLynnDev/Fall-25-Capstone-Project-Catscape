@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dyntnlpvlftqt"]
 
 [ext_resource type="PackedScene" uid="uid://c0n52baji5jcx" path="res://Entities/Player/PlayerNew.tscn" id="2_iycnp"]
-[ext_resource type="PackedScene" path="res://World/water.tscn" id="2_tvlxj"]
-[ext_resource type="PackedScene" path="res://World/skybox_hub.tscn" id="3_yx075"]
-[ext_resource type="PackedScene" path="res://World/cat's_cape_level_chunks.tscn" id="4_evskn"]
-[ext_resource type="PackedScene" path="res://World/catscape_questnyan_mark_v_1.tscn" id="6_85dfj"]
-[ext_resource type="PackedScene" path="res://World/catscape_polytree_1.tscn" id="6_pblp5"]
+[ext_resource type="PackedScene" uid="uid://55nc0ldm28e6" path="res://World/water.tscn" id="2_tvlxj"]
+[ext_resource type="PackedScene" uid="uid://c62vf21wlw7gh" path="res://World/skybox_hub.tscn" id="3_yx075"]
+[ext_resource type="PackedScene" uid="uid://de2sfo01xxxii" path="res://World/cat's_cape_level_chunks.tscn" id="4_evskn"]
+[ext_resource type="PackedScene" uid="uid://bvdihqlbspw0m" path="res://World/catscape_questnyan_mark_v_1.tscn" id="6_85dfj"]
+[ext_resource type="PackedScene" uid="uid://ds0rmrbfguq4i" path="res://World/catscape_polytree_1.tscn" id="6_pblp5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_top_color = Color(0.0470588, 0.705882, 0.941176, 1)
