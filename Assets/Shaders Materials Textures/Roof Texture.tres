@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dw5eislkaehs3"]
+
+[ext_resource type="Texture2D" uid="uid://dbj7lp12x106l" path="res://Assets/Shaders Materials Textures/Hub Level Textures/catscape_roof_texture.png" id="1_j6yjq"]
+
+[resource]
+albedo_texture = ExtResource("1_j6yjq")
