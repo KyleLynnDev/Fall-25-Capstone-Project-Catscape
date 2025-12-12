@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bywuod6sox8xh"
-path.s3tc="res://.godot/imported/cave background.png-4390c168c0c7d1d9b710e5e7602ec05b.s3tc.ctex"
+uid="uid://dn1voeuqsvuqn"
+path.s3tc="res://.godot/imported/Crystal_House_Door_01.png-dbd2189066ed885654c64b279779bf09.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Shaders/cave background.png"
-dest_files=["res://.godot/imported/cave background.png-4390c168c0c7d1d9b710e5e7602ec05b.s3tc.ctex"]
+source_file="res://Assets/Models/Crystal_House_Door_01.png"
+dest_files=["res://.godot/imported/Crystal_House_Door_01.png-dbd2189066ed885654c64b279779bf09.s3tc.ctex"]
 
 [params]
 
