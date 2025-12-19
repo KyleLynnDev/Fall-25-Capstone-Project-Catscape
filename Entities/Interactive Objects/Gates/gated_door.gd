@@ -36,8 +36,9 @@ func openGate():
 	
 func denyGate():
 
+	Global._on_dialog_start();
 	Global.say_quick("You need a key to open this door!")			
-	
+	Global._on_dialog_end();
 	
 func openHeartGate(): 
 	Global.keys -= 1;

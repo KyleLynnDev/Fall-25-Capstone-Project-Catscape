@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d00uxfxk5ffh3"
-path.s3tc="res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"
+path="res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Entities/NPCs/Sir Frog/Sir Frog Sprite.png"
-dest_files=["res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Sir Frog Sprite.png-81946a975b01714312ee169478177d2c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

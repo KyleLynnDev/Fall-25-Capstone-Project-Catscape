@@ -10,14 +10,14 @@
 },
 &"default_portrait": "Group/New portrait",
 &"description": "",
-&"display_name": "character",
+&"display_name": "Sir Frog",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "Group/New portrait": {
 "export_overrides": {
-"image": "\"res://PMCS_MarioSprite.png\""
+"image": "\"res://Entities/NPCs/Sir Frog/Sir Frog Sprite.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

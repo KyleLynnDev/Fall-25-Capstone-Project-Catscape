@@ -1,4 +1,4 @@
-[gd_scene load_steps=545 format=3 uid="uid://cbvjid0cuf4nh"]
+[gd_scene load_steps=546 format=3 uid="uid://cbvjid0cuf4nh"]
 
 [ext_resource type="AudioStream" uid="uid://ddl1vfuoth85n" path="res://Sounds/Mountain_Peak_Amb.wav" id="1_u563e"]
 [ext_resource type="PackedScene" uid="uid://dwrawcavyixem" path="res://World/skybox_mountain_peak.tscn" id="2_07khm"]
@@ -100,6 +100,7 @@
 [ext_resource type="ArrayMesh" uid="uid://8ora8dfxw2sk" path="res://Assets/Models/Presents_Decorations/present-b-cube.obj" id="95_hxl3g"]
 [ext_resource type="ArrayMesh" uid="uid://kqy8gi61mvc0" path="res://Assets/Models/Presents_Decorations/present-b-rectangle.obj" id="96_8k1g2"]
 [ext_resource type="ArrayMesh" uid="uid://dl602b2gnge0y" path="res://Assets/Models/Presents_Decorations/present-b-round.obj" id="97_6idoi"]
+[ext_resource type="PackedScene" uid="uid://wiy7cfldrylr" path="res://Common/Animations/scene_transition_rect.tscn" id="101_8k1g2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2tn14"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -6744,10 +6745,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.548, 38.739, -26.0541)
 [node name="Heart" parent="Mountain_Peak_Level" instance=ExtResource("57_ddau5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06473, 0.612832, -1.13216)
 sprite_preview = ExtResource("58_fq8tp")
+interact_type = "Item"
 
 [node name="Sir Frog Temp" parent="Mountain_Peak_Level" instance=ExtResource("57_ddau5")]
 transform = Transform3D(0.31056, 0, 0, 0, 0.31056, 0, 0, 0, 0.31056, -1.93012, 1.29338, 2.06845)
 sprite_preview = ExtResource("59_fq8tp")
+interact_type = "NPC"
+npc_name = "Sir Frog"
 
 [node name="Crystals Decorations" type="Node3D" parent="Mountain_Peak_Level"]
 
@@ -7602,6 +7606,8 @@ skeleton = NodePath("../../root/@EditorNode@21272/@Panel@14/@VBoxContainer@15/Do
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mountain_Peak_Level/Lower Village Decorations/Presents Lower Village/Present-b-round/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_min5s")
+
+[node name="SceneTransitionRect" parent="." instance=ExtResource("101_8k1g2")]
 
 [editable path="Mountain_Peak_Level/Item Examples/Item Example4"]
 [editable path="Mountain_Peak_Level/Item Examples/Item Example7"]

@@ -8,6 +8,7 @@ size = Vector3(1, 1.38477, 1)
 
 [node name="GatedDoor" type="StaticBody3D" groups=["Interactable"]]
 script = ExtResource("1_bmiy6")
+requirement_value = "0"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.35322, 0, 0.745136, 0)
